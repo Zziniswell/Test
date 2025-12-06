@@ -1,0 +1,111 @@
+name: DNS filtered
+
+on:
+  schedule:
+    - cron: '15 18 * * *'  # 한국시간 새벽 3시 15분 (UTC+9)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  filter-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Process Rules
+        env:
+          TZ: 'Asia/Seoul'
+        run: |
+          download_filter() {
+            local URL=$1
+            local OUTPUT=$2
+            local MAX_RETRIES=3
+            local DELAY=60
+            local ATTEMPT=1
+            local SUCCESS=0
+            
+            while [ $ATTEMPT -le $MAX_RETRIES ]; do
+              echo "Downloading: $OUTPUT (Attempt $ATTEMPT/$MAX_RETRIES) ..."
+              curl -sL "$URL" -o "$OUTPUT" || true
+              LINES=$(wc -l < "$OUTPUT" || echo 0)
+              
+              if [ "$LINES" -ge 50 ]; then
+                echo "Success: $OUTPUT downloaded with $LINES lines"
+                SUCCESS=1
+                break
+              else
+                echo "Fail: $OUTPUT (Lines: $LINES)"
+                if [ $ATTEMPT -lt $MAX_RETRIES ]; then
+                  echo "Waiting $DELAY seconds before retry..."
+                  sleep $DELAY
+                fi
+                ATTEMPT=$((ATTEMPT + 1))
+              fi
+            done
+            
+            if [ $SUCCESS -eq 0 ]; then
+              echo "Final Failure: $OUTPUT could not be downloaded."
+              echo "CRITICAL_FAILURE=true" >> $GITHUB_ENV
+              return 1
+            fi
+            return 0
+          }
+          
+          download_filter "https://filters.adtidy.org/android/filters/15_optimized.txt" "original.txt"
+          
+          if [ "$CRITICAL_FAILURE" == "true" ]; then
+            echo "Download failed. Exiting."
+            exit 1
+          fi
+          
+          awk '!/^!/ && (index($0, "*") || !/\^\s*$/ || !/^\|/)' original.txt > "DNS filtered.txt"
+          
+          LINE_COUNT=$(grep -cve '^\s*$' "DNS filtered.txt" || true)
+          
+          if [ "$LINE_COUNT" -gt 1000 ]; then
+            > "DNS filtered.txt"
+            echo "Result: 0 lines (Fail-safe triggered - $LINE_COUNT > 1000)"
+          else
+            echo "Success: $LINE_COUNT rules extracted."
+          fi
+          
+          rm original.txt
+
+      - name: Deploy to Isolate Branch
+        if: always()
+        run: |
+          if [ "$CRITICAL_FAILURE" == "true" ]; then
+             echo "Critical Download Failure Detected. Canceling Update."
+             exit 1
+          fi
+          
+          mkdir -p /tmp/filter_output
+          mv "DNS filtered.txt" /tmp/filter_output/
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin Isolate || true
+          
+          if git show-ref --verify --quiet refs/remotes/origin/Isolate; then
+             git checkout Isolate
+             git pull origin Isolate --rebase
+          else
+             git checkout --orphan Isolate
+             git rm -rf .
+          fi
+          
+          mv /tmp/filter_output/"DNS filtered.txt" .
+          
+          git add "DNS filtered.txt"
+          
+          if git diff --staged --quiet; then
+            echo "No changes detected."
+          else
+            git commit -m "Auto update DNS filtered rules: $(date +'%Y-%m-%d %H:%M:%S') KST"
+            git push origin Isolate
+          fi

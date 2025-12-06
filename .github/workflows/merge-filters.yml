@@ -1,0 +1,165 @@
+name: Merge Privacy Filters
+
+on:
+  schedule:
+    - cron: '15 17 * * *'
+    - cron: '15 1 * * *'
+    - cron: '15 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Download and Merge Filters
+        env:
+          TZ: 'Asia/Seoul'
+        run: |
+          TODAY=$(date +'%y.%m.%d')
+          COUNTER=1
+          
+          git fetch origin Isolate || true
+          
+          if git show origin/Isolate:merged-privacy-filters.txt > old_filter.txt 2>/dev/null; then
+            LAST_VER_LINE=$(grep "^! Version: " old_filter.txt | head -n 1 || true)
+            if [ -n "$LAST_VER_LINE" ]; then
+              VAL=${LAST_VER_LINE#"! Version: "}
+              LAST_DATE=$(echo $VAL | cut -d. -f1-3)
+              LAST_COUNT=$(echo $VAL | cut -d. -f4)
+              
+              if [ "$LAST_DATE" == "$TODAY" ]; then
+                COUNTER=$((LAST_COUNT + 1))
+              fi
+            fi
+            rm old_filter.txt
+          fi
+          
+          NEW_VERSION="$TODAY.$COUNTER"
+          echo "Target Version: $NEW_VERSION"
+
+          cat > final_result.txt << EOF
+          # This file contains filters from AdGuard and Easylist filters
+          # Source1 : https://github.com/AdguardTeam/AdguardFilters
+          # Source2: https://github.com/easylist/easylist
+          # License: GPL 3.0
+
+          ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
+          ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
+          ! Expires: 8 hours
+          ! Version: $NEW_VERSION
+
+          !! Merged rules
+          EOF
+          echo "" >> final_result.txt
+
+          download_filter() {
+            local URL=$1
+            local NAME=$2
+            local MAX_RETRIES=3
+            local DELAY=60
+            local ATTEMPT=1
+            local SUCCESS=0
+            
+            while [ $ATTEMPT -le $MAX_RETRIES ]; do
+              echo "Downloading: $NAME (Attempt $ATTEMPT/$MAX_RETRIES) ..."
+              curl -sL "$URL" -o "temp_${NAME}.txt" || true
+              LINES=$(wc -l < "temp_${NAME}.txt" || echo 0)
+              
+              if [ "$LINES" -ge 50 ]; then
+                echo "Success: $NAME"
+                cat "temp_${NAME}.txt" >> final_result.txt
+                echo "" >> final_result.txt
+                rm -f "temp_${NAME}.txt"
+                SUCCESS=1
+                break
+              else
+                echo "Fail: $NAME (Lines: $LINES)"
+                if [ $ATTEMPT -lt $MAX_RETRIES ]; then
+                  sleep $DELAY
+                fi
+                ATTEMPT=$((ATTEMPT + 1))
+              fi
+            done
+            
+            if [ $SUCCESS -eq 0 ]; then
+              echo "Final Failure: $NAME could not be downloaded."
+              echo "CRITICAL_FAILURE=true" >> $GITHUB_ENV
+            fi
+          }
+
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt" "ag_allowlist"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_allowlist.txt" "ag_cookies_allowlist"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_general.txt" "ag_cookies_general"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_specific.txt" "ag_cookies_specific"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/general_extensions.txt" "ag_general_extensions"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/general_url.txt" "ag_general_url"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt" "ag_mobile"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile_allowlist.txt" "ag_mobile_allowlist"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/specific.txt" "ag_specific"
+          download_filter "https://raw.githubusercontent.com/Zziniswell/Test/Isolate/DNS%20filtered.txt" "ag_DNS_filtered"
+
+          echo "##body" >> final_result.txt
+          echo "*#%#//scriptlet('prevent-canvas')" >> final_result.txt
+          echo "" >> final_result.txt
+          echo "!#if adguard" >> final_result.txt
+          echo "" >> final_result.txt
+
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_allowlist.txt" "ep_allowlist"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_allowlist_international.txt" "ep_intl"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_general.txt" "ep_general"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_general_emailtrackers.txt" "ep_general_email"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_specific.txt" "ep_specific"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_specific_international.txt" "ep_specific_intl"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_specific_perimeterx.txt" "ep_perimeterx"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty.txt" "ep_thirdparty"
+          download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty_international.txt" "ep_thirdparty_intl"
+          
+          echo "!#endif" >> final_result.txt
+
+      - name: Deploy to Isolate Branch
+        if: always()
+        run: |
+          if [ "$CRITICAL_FAILURE" == "true" ]; then
+             echo "Critical Download Failure Detected. Canceling Update."
+             exit 1
+          fi
+
+          TOTAL_LINES=$(wc -l < final_result.txt)
+          if [ "$TOTAL_LINES" -lt 1000 ]; then
+             echo "Critical Error: File too small ($TOTAL_LINES lines). Canceling Update."
+             exit 1
+          fi
+          
+          mkdir -p /tmp/filter_output
+          mv final_result.txt /tmp/filter_output/merged-privacy-filters.txt
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin Isolate || true
+          
+          if git show-ref --verify --quiet refs/remotes/origin/Isolate; then
+             git checkout Isolate
+             git pull origin Isolate --rebase
+          else
+             git checkout --orphan Isolate
+             git rm -rf .
+          fi
+          mv /tmp/filter_output/merged-privacy-filters.txt .
+          
+          git add merged-privacy-filters.txt
+          
+          if git diff --staged --quiet; then
+            echo "No changes detected."
+          else
+            git commit -m "Auto update: $(date +'%Y-%m-%d %H:%M:%S') KST"
+            git push origin Isolate
+          fi
