@@ -6,7 +6,7 @@
 ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.08.3
+! Version: 25.12.09.1
 
 !! Merged rules
 
@@ -30,6 +30,10 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219502
+@@||tags.tiqcdn.com/utag/cbsi/pluto-tv/prod/utag.js$domain=pluto.tv
+! https://github.com/AdguardTeam/AdguardFilters/issues/219474
+@@||st-eu.dynamicyield.com/st?sec=$domain=manor.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219435
 @@||tags.tiqcdn.com/utag/bofa/ml/prod/utag.js$domain=ml.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219275
@@ -6848,11 +6852,8 @@ accountkiller.com#%#window.ga = function(){var a = arguments[5];a&&a.hitCallback
 ! AGLint temporarily disabled for this rule due to https://github.com/AdguardTeam/AGLint/issues/191
 ! TODO: Enable it back when AGLint is fixed.
 ! TODO: remove document modifier when this issue is fixed - https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2954
-! aglint-disable-next-line
 /.*/$permissions=join-ad-interest-group=(),document
-! aglint-disable-next-line
 /.*/$permissions=run-ad-auction=(),document
-! aglint-disable-next-line
 /.*/$permissions=browsing-topics=(),document
 !
 ! Suppressing Private State Token API
@@ -6910,6 +6911,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/.rum/@adobe/helix-
 ://sp.*/sp/h|$xmlhttprequest
 /srpc.js?ssss
 /posthog/ingest/*
@@ -8943,7 +8945,6 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !+ NOT_OPTIMIZED
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,important,domain=turbo.pt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152079
-! aglint-disable-next-line no-excluded-rules
 !||staff-start.com/js/track/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187274
 ! Breaks search on shopping.yahoo.co.jp
@@ -8975,6 +8976,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||mypikpak.com/scripts/clarity.js
+||mypikpak.com/scripts/adjust.min.js
+||mypikpak.com/scripts/track.js
 ||redbull.com/btnt.js
 ||smart-components-api.redbull.com/report-usage
 entapark.jp##div[id$="-pickup"][style^="height"]
@@ -14040,17 +14044,17 @@ mediamarkt.de#%#//scriptlet('abort-on-property-write', 'ftr__startScriptLoad')
 /api/rest/analytics/page/rendered$domain=komonews.com|wjactv.com|upnorthlive.com|cnycentral.com|wpde.com|cbs6albany.com|kutv.com|wjla.com|news3lv.com|kmph.com|kfoxtv.com|fox17.com|foxbaltimore.com|foxchattanooga.com|foxillinois.com|foxnebraska.com|foxreno.com|foxrochester.com|foxsanantonio.com|nbcmontana.com|okcfox.com|siouxlandnews.com|wach.com|wchstv.com|wcyb.com|wfxl.com|wgxa.tv|wlos.com|wsbt.com|cbs2iowa.com|fox4beaumont.com|mycbs4.com|mynews4.com|news4sanantonio.com|abc6onyourside.com|wtov9.com|turnto10.com|fox11online.com|mynbc15.com|nbc16.com|fox23maine.com|nbc24.com|fox28savannah.com|myfox28columbus.com|fox42kptm.com|dayton247now.com|fox56.com|katu.com|local12.com|bakersfieldnow.com|ktul.com|22thepoint.com|abc3340.com|abc45.com|abc7amarillo.com|abcnews4.com|cbs12.com|cbs4local.com|cbsaustin.com|chattanoogacw.com|cw14online.com|cwomaha.tv|cw18milwaukee.com|cw23tv.com|cw34.com|cw35.com|cw9tv.com|cwcentralpa.com|cwcincinnati.com|cwcolumbus.com|cwlasvegas.com|cwtreasurevalley.com|fox38corpuschristi.com|fox47.com|fox49.tv|foxkansas.com|foxrichmond.com|idahonews.com|katv.com|kcby.com|kdsm17.com|keprtv.com|kfdm.com|khqa.com|kimatv.com|kmyu.tv|kocb.com|kpic.com|krcgtv.com|krcrtv.com|ktvl.com|ktvo.com|ktxs.com|kunptv.com|kunwtv.com|kval.com|local21news.com|midmichigannow.com|myrdctv.com|mytv30web.com|mytvbaltimore.com|mytvbuffalo.com|mytvcharleston.com|mytvdayton.com|mytvrichmond.com|mytvwichita.com|mytvz.com|nebraska.tv|nevadasportsnet.com|newschannel20.com|newschannel9.com|raleighcw.com|seattlerefined.com|southernoregoncw.com|star64.tv|telemundoaustin.com|thecw38.com|thecw46.com|thecwtc.com|thecwtv.tv|thenationaldesk.com|utv44.com|wabm68.com|watchdaytime.com|wcti12.com|weartv.com|wfgxtv.com|wgme.com|wpgh53.com|wset.com|wtwc40.com|wutv29.com|wwmt.com|13wham.com
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216803
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ||track.effiliation.com/servlet/effi.redir$urltransform=/%3A/:/
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ||track.effiliation.com/servlet/effi.redir$urltransform=/%2F/\//
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ||track.effiliation.com/servlet/effi.redir$urltransform=/^https?:\/\/(?:[a-z0-9-]+\.)*?track\.effiliation\.com.*[?&]url=(.+)$/\$1/
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197963
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ||digidip.net/visit?url=$urltransform=/%3A/:/
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
@@ -14061,7 +14065,7 @@ mediamarkt.de#%#//scriptlet('abort-on-property-write', 'ftr__startScriptLoad')
 ||digidip.net/visit?url=$urltransform=/%3D/=/
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ||digidip.net/visit?url=$urltransform=/^https?:\/\/(?:[a-z0-9-]+\.)*?.*\.digidip\.net.*url=([^&]*).*/\$1/
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! dzen.ru
 ||yandex.ru/ads/zen_audit
@@ -19616,6 +19620,7 @@ _WebVitalsReporter_
 /*JmVu.js?sp=
 /*JmVu.js?tg=
 /.netlify/scripts/rum
+/.rum/@adobe/helix-
 /ns.html?id=GTM-
 /send_ga4_params?
 /tag/proxy?id=G-
@@ -21126,6 +21131,7 @@ omni.soundestlink.com$image
 ||overstock.com/dlp?
 ||ovyerus.com/js/script.js
 ||p.codio.com^
+||p.controld.com^
 ||p.ctpost.com/article?
 ||p.hentaiforce.net^
 ||p.minds.com^
