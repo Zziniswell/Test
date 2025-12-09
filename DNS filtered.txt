@@ -533,6 +533,21 @@ dlsdk.appsflyer.com^
 ||h3v9p8x2q1r7-agckaeh6g2ehcaes.*.azurewebsites.net^
 # title: Frellwit's Swedish Hosts File
 # homepage: https://github.com/lassekongo83/Frellwits-filter-lists/
+-ad123-
+-banner-ads.
+-banner-iklan-
+-banner728x90.
+-iklan-gif-
+-iklan1.
+-iklan2.
+-iklan789-
+-ikln.
+-720x90-
+-728x90a.
+.1080.x.90.
+@@/\.(gif|jpe?g|png|webp)#(\/?.+)?(\/(ad)s?\/|\/ad-)/
+-bandarkiu.
+-tototix.gif
 ||admicro*.vcmedia.vn^
 ||log-*.epicdn.me^
 ||log-*.zadn.vn^
