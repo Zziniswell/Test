@@ -6,7 +6,7 @@
 ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.11.3
+! Version: 25.12.12.1
 
 !! Merged rules
 
@@ -6478,9 +6478,6 @@ coupang.com#%#//scriptlet('json-prune-xhr-response', 'tracking', 'feeds', 'n-api
 ! For some reason filters compiler converts it to '""'
 ! https://github.com/AdguardTeam/FiltersRegistry/commit/8324eca5002de69940c919e52f2c8b275f206f77#diff-320cdcaedbead8abe58ffbad0a822baa2b4d5942481e5456da88f5dfaf98cb4cR35-R36
 aceee.org#%#//scriptlet('prevent-canvas', '2d')
-! https://github.com/AdguardTeam/AdguardFilters/issues/212788
-delta.com#%#//scriptlet('set-constant', 'TrackJS', 'emptyObj')
-delta.com#%#//scriptlet('set-constant', 'TrackJS.install', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207145
 hoy.tv#%#(()=>{const i=function(){};window.__uid2=window.__uid2||{},window.__uid2.init=i,window.__uid2.setIdentityFromEmail=i,window.__uid2.callbacks=window.__uid2.callbacks||[],window.__uid2.callbacks.push=function(i){"function"==typeof i&&i("InitCompleted",{identity:null})}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205925
@@ -7782,6 +7779,9 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||events-api.lyrebirdstudio.net^
+||log.pdfbookeditor.live^
+||mob2.cactus-bp.com^
 ||log.cleansweepplu.com^
 ||tc.vbnmhjlp.com^
 ||logrcv.adseyeservice.com^
@@ -8989,6 +8989,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||temu.com/*/conversion/*beacon$ping
+||t.me/v/?views=
 ||cdn.melhorplano.net/scripts/tracker/
 ||zdnet.co.kr/js/wl6.js
 ||a0.awsstatic.com/eb-csr/*/orchestrate.js
@@ -21033,6 +21035,7 @@ omni.soundestlink.com$image
 ||messari.io/js/wutangtrack.js
 ||messenger.com/ajax/bnzai?
 ||metacrawler.com/pingback
+||metis.truecaller.com^
 ||metrics.audius.co^
 ||metrics.bangbros.com^
 ||metrics.camsoda.com^
