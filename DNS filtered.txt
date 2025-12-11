@@ -535,7 +535,6 @@ dlsdk.appsflyer.com^
 # homepage: https://github.com/lassekongo83/Frellwits-filter-lists/
 -ad123-
 -banner-ads.
--banner-iklan-
 -banner728x90.
 -iklan-gif-
 -iklan1.
