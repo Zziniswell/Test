@@ -6,7 +6,7 @@
 ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.12.1
+! Version: 25.12.12.2
 
 !! Merged rules
 
@@ -8989,6 +8989,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||api.20min.ch/kaia/v*/persist
+20min.ch#%#//scriptlet('set-local-storage-item', 'clientId', '$remove$')
 ||temu.com/*/conversion/*beacon$ping
 ||t.me/v/?views=
 ||cdn.melhorplano.net/scripts/tracker/
@@ -9245,7 +9247,6 @@ letterboxd.com#%#//scriptlet('href-sanitizer', 'a[href^="https://click.justwatch
 ||static.comdirect.de/*Logger.js
 ||cognito-identity.*.amazonaws.com^$domain=qr.finedinemenu.com
 ||api.lessentiel.lu/kaia/v*/persist
-||ats.20min.ch/__global/att/prod/latest/ats-tm.js
 lessentiel.lu#%#//scriptlet('set-local-storage-item', 'clientId', '$remove$')
 novakid.*,novakidschool.com#%#//scriptlet('set-local-storage-item', 'ftr', '$remove$')
 ||school.novakidschool.com/api/*/metrics
@@ -15453,7 +15454,6 @@ dlsdk.appsflyer.com^
 # homepage: https://github.com/lassekongo83/Frellwits-filter-lists/
 -ad123-
 -banner-ads.
--banner-iklan-
 -banner728x90.
 -iklan-gif-
 -iklan1.
@@ -19042,6 +19042,7 @@ analytics-*.aasaam.com
 /track.v2.js
 /track/?*&event=
 /track/?data=
+/track/?verbose=
 /track/aggregate?
 /track/batch?
 /Track/Capture.aspx?
@@ -24712,6 +24713,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||assets.9gtb.com^
 ||assets.apollo.io/micro/website-tracker/
 ||assets.hearstapps.com/commerce/release/affiliate-bundle.
+||assets.minutemediacdn.com/mm-cwv-tracker/
 ||assets.moneymade.io/js/fp.min.js
 ||assets.trendii.com/pixel/main.js
 ||assets.yumpu.com/release/*/tracking.js
