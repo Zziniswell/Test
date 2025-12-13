@@ -52,6 +52,7 @@ vkcdnservice.appspot.com^
 ||158.247.208.
 ||23.109.82.
 ||23.109.87.
+||util-*.simply-hentai.com^
 ||allsportsflix.
 ||*.libaishuo.com^
 ||adv0*.msa.cdn.mediaset.net^
