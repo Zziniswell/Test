@@ -6,7 +6,7 @@
 ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.14.1
+! Version: 25.12.14.2
 
 !! Merged rules
 
@@ -14996,6 +14996,7 @@ vkcdnservice.appspot.com^
 ||158.247.208.
 ||23.109.82.
 ||23.109.87.
+||util-*.simply-hentai.com^
 ||allsportsflix.
 ||*.libaishuo.com^
 ||adv0*.msa.cdn.mediaset.net^
@@ -16625,6 +16626,7 @@ analytics-*.aasaam.com
 @@||afisha.ru/proxy/videonetworkproxy.ashx?$xmlhttprequest
 @@||criteo.net/js/ld/publishertag.js$domain=novayagazeta.ru
 @@||dict.rambler.ru/fcgi-bin/$xmlhttprequest,domain=rambler.ru
+@@||docs.rucml.ru/e.gif?$~third-party
 @@||fplay.online/log_event$~third-party,xmlhttprequest
 @@||k12-company.ru^*/statistics.js$script
 @@||krok8.com/wp-content/plugins/pageviews/pageviews.min.js$script,~third-party
@@ -25292,6 +25294,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||dynamicyield.com/var?
 ||e.channelexco.com^
 ||e.ebidtech.com/cv/
+||e.revenue.cat^
 ||e045f561.b-cdn.net^
 ||ea.youmaker.com^
 ||early-birds.fr/tracker/
@@ -27275,6 +27278,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||zapcdn.space/zapret.js
 ||zendesk.com/frontendevents/$xmlhttprequest
 ||zengenti.com/tags/
+||zeropartyforms.com^*/digibox.gif?
 ||zi-scripts.com/zi-tag.js
 ||ziffdavisb2b.com^*/tracker.js
 ||zineone.com^*/event
