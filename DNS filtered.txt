@@ -159,6 +159,7 @@ vkcdnservice.appspot.com^
 |load.sst.
 ||thegreatesthits.
 |piwik.
+||tracking.cds.dmm.
 ||htm*.hepsiburada.com^
 ||touch.yesim.
 ||data-track*.yingxiong.com^
