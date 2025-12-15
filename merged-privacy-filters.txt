@@ -6,7 +6,7 @@
 ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.15.2
+! Version: 25.12.15.3
 
 !! Merged rules
 
@@ -30,6 +30,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219906
+@@||cdn.shopify.com/oxygen-v2/*/assets/Clarity-$domain=thegoodguys.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219632
 ! aglint-disable-next-line no-invalid-modifiers
 @@||cdn.taboola.com/libtrc/unpkg/tfa.js$domain=/anitube\d+\.vip/
@@ -9000,6 +9002,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+goodnovel.com#%#//scriptlet('set-local-storage-item', 'UUID', '$remove$')
 ||bookoff.co.jp/assets/js/ac/tag-analyze.js
 ||bookoffonline.co.jp/files/tracking/
 ||api.20min.ch/kaia/v*/persist
@@ -20761,6 +20764,7 @@ omni.soundestlink.com$image
 ||gg.vevor.com^
 ||ghacks.net/statics/px.gif
 ||gianteagle.com/webevents/
+||giftornado.com/counter.php
 ||girlsofdesire.org/images/girlsofdesire.org/analytics.js
 ||github.com/_private/browser/stats
 ||github.dev/diagnostic?
@@ -24578,6 +24582,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||analytics.foresee.com^
 ||analytics.formstack.com^
 ||analytics.genial.ly^
+||analytics.getsnworks.com^
 ||analytics.gokwik.co^
 ||analytics.google.com^$third-party
 ||analytics.gooogol.com^
