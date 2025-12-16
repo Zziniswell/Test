@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.16.4
+! Version: 25.12.17.1
 
 !! Merged rules
 
@@ -7073,6 +7073,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 /js/wherego_tracker.js?
 .jp/log.php?
 .jp/static/js/track.js
+/oo/cl-$~third-party
 /oo/cl.js|$~third-party
 /oo/cl*.js?rd=$~third-party
 /oo/*/lsync.$~third-party
@@ -16381,6 +16382,7 @@ analytics-*.aasaam.com
 @@||forecast.lemonde.fr/p/event/pageview?$image,~third-party
 @@||franceinfo.fr/assets/*/piano-analytics/piano-analytics-$script,~third-party
 @@||helix.videotron.com/js/api/fingerprint.js$~third-party
+@@||howsmyssl.com^$script,domain=trenitalia.fr
 @@||icu.newsroom.bi/ingest.php$xmlhttprequest,domain=autoplus.fr
 @@||logic-immo.com/lib/xiti/xiti.js$script,~third-party
 @@||mabanque.fortuneo.fr/js/front/fingerprint2.js$script,domain=mabanque.fortuneo.fr
@@ -18330,6 +18332,7 @@ analytics-*.aasaam.com
 /oo/*/l.js
 /oo/*/lsync.
 /oo/cl*.js?rd=
+/oo/cl-$~third-party
 /oo/cl.js|$~third-party
 /op/analytics.js?domain=
 /opdc.js
@@ -20054,6 +20057,7 @@ omni.soundestlink.com$image
 ||9gag.com/track/
 ||a-da.invideo.io^
 ||a-reporting.nytimes.com^
+||a.apkeditor.io^
 ||a.electerious.com^
 ||a.sputniknews.com/js/sputnik.js
 ||a.tellonym.me^
