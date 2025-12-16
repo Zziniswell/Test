@@ -52,6 +52,7 @@ jobs:
           # License: GPL 3.0
 
           ! Title: AdGuard Tracking Protection filter + EasyPrivacy (Optimized)
+          ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
           ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
           ! Expires: 8 hours
           ! Version: $NEW_VERSION
