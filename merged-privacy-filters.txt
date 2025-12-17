@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.17.3
+! Version: 25.12.18.1
 
 !! Merged rules
 
@@ -105,8 +105,9 @@
 @@||cdn.cxense.com/cx*.js$domain=onetz.de
 @@||cdn.cxense.com/sp*.html$domain=onetz.de
 @@||api.cxense.com/public/widget/data?json=$domain=onetz.de
+! https://github.com/uBlockOrigin/uAssets/issues/16086#issuecomment-3655830578
 ! https://github.com/easylist/easylist/pull/7880/
-@@||dev.visualwebsiteoptimizer.com^$script,xmlhttprequest,domain=dominos.jp
+@@||dev.visualwebsiteoptimizer.com^$script,xmlhttprequest,domain=dominos.jp|dominos.com.my|dominos.com.sg|dominoslk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215786
 @@||googletagmanager.com/gtm.js$domain=sferis.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215834
@@ -4775,6 +4776,9 @@ kizi.com#%#window.google_trackConversion = function() {};
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! Galaksion
+$cookie=GL_UI4
+$cookie=GL_GI10
 ! baixafilmestorrent.com
 $cookie=adb_saas
 ! tagContainer (commandersact.com)
@@ -5614,6 +5618,11 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220298
+||agoda.com^$cookie=agoda.analytics
+||agoda.com^$cookie=agoda.firstclicks
+||agoda.com^$cookie=agoda.lastclicks
+||agoda.com^$cookie=t_rc
 ! aws.amazon.com
 ||amazon.com^$cookie=aws-target-data
 ||amazon.com^$cookie=aws-target-session-id
