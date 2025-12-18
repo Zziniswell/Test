@@ -23,6 +23,8 @@ jobs:
         env:
           TZ: 'Asia/Seoul'
         run: |
+          set -e
+          
           TODAY=$(date +'%y.%m.%d')
           COUNTER=1
           
@@ -67,34 +69,41 @@ jobs:
             local MAX_RETRIES=3
             local DELAY=60
             local ATTEMPT=1
-            local SUCCESS=0
             
             while [ $ATTEMPT -le $MAX_RETRIES ]; do
               echo "Downloading: $NAME (Attempt $ATTEMPT/$MAX_RETRIES) ..."
-              curl -sL "$URL" -o "temp_${NAME}.txt" || true
-              LINES=$(wc -l < "temp_${NAME}.txt" || echo 0)
               
-              if [ "$LINES" -ge 50 ]; then
-                echo "Success: $NAME"
-                cat "temp_${NAME}.txt" >> final_result.txt
-                echo "" >> final_result.txt
-                rm -f "temp_${NAME}.txt"
-                SUCCESS=1
-                break
-              else
-                echo "Fail: $NAME (Lines: $LINES)"
-                if [ $ATTEMPT -lt $MAX_RETRIES ]; then
-                  sleep $DELAY
+              if curl -sL "$URL" -o "temp_${NAME}.txt"; then
+                LINES=$(wc -l < "temp_${NAME}.txt" 2>/dev/null || echo 0)
+                
+                if [ "$LINES" -ge 50 ]; then
+                  echo "Success: $NAME ($LINES lines)"
+                  cat "temp_${NAME}.txt" >> final_result.txt
+                  echo "" >> final_result.txt
+                  rm -f "temp_${NAME}.txt"
+                  return 0
+                else
+                  echo "Fail: $NAME (Only $LINES lines - expected at least 50)"
                 fi
-                ATTEMPT=$((ATTEMPT + 1))
+              else
+                echo "Fail: $NAME (Download error)"
               fi
+              
+              if [ $ATTEMPT -lt $MAX_RETRIES ]; then
+                echo "Retrying in ${DELAY} seconds..."
+                sleep $DELAY
+              fi
+              ATTEMPT=$((ATTEMPT + 1))
             done
             
-            if [ $SUCCESS -eq 0 ]; then
-              echo "Final Failure: $NAME could not be downloaded."
-              echo "CRITICAL_FAILURE=true" >> $GITHUB_ENV
-            fi
+            echo "CRITICAL FAILURE: $NAME could not be downloaded after $MAX_RETRIES attempts."
+            echo "Aborting workflow. Will retry at next scheduled time."
+            return 1
           }
+
+          echo "=========================================="
+          echo "Starting downloads..."
+          echo "=========================================="
 
           download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt" "ag_allowlist"
           download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_allowlist.txt" "ag_cookies_allowlist"
@@ -126,21 +135,25 @@ jobs:
           download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty_international.txt" "ep_thirdparty_intl"
           
           echo "!#endif" >> final_result.txt
+          
+          echo "=========================================="
+          echo "All downloads completed successfully!"
+          echo "=========================================="
 
-      - name: Deploy to Isolate Branch
-        if: always()
-        run: |
-          if [ "$CRITICAL_FAILURE" == "true" ]; then
-             echo "Critical Download Failure Detected. Canceling Update."
-             exit 1
-          fi
-
+          # 최종 파일 크기 검증
           TOTAL_LINES=$(wc -l < final_result.txt)
-          if [ "$TOTAL_LINES" -lt 1000 ]; then
-             echo "Critical Error: File too small ($TOTAL_LINES lines). Canceling Update."
+          echo "Total lines in merged file: $TOTAL_LINES"
+          
+          if [ "$TOTAL_LINES" -lt 25000 ]; then
+             echo "CRITICAL ERROR: File too small ($TOTAL_LINES lines). Expected at least 25000 lines."
+             echo "Aborting workflow. Will retry at next scheduled time."
              exit 1
           fi
           
+          echo "File size validation passed"
+
+      - name: Deploy to Isolate Branch
+        run: |
           mkdir -p /tmp/filter_output
           mv final_result.txt /tmp/filter_output/merged-privacy-filters.txt
           
@@ -156,13 +169,20 @@ jobs:
              git checkout --orphan Isolate
              git rm -rf .
           fi
+          
           mv /tmp/filter_output/merged-privacy-filters.txt .
           
           git add merged-privacy-filters.txt
           
           if git diff --staged --quiet; then
-            echo "No changes detected."
+            echo "=========================================="
+            echo "No changes detected. Skipping commit."
+            echo "=========================================="
           else
+            echo "=========================================="
+            echo "Changes detected. Committing and pushing..."
+            echo "=========================================="
             git commit -m "Auto update: $(date +'%Y-%m-%d %H:%M:%S') KST"
             git push origin Isolate
+            echo "Successfully updated!"
           fi
