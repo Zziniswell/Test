@@ -106,6 +106,7 @@ jobs:
           download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile_allowlist.txt" "ag_mobile_allowlist"
           download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/specific.txt" "ag_specific"
           download_filter "https://raw.githubusercontent.com/Zziniswell/Test/Isolate/DNS%20filtered.txt" "ag_DNS_filtered"
+          download_filter "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/MobileFilter/sections/general_url.txt" "ag_mobileAds_general"
 
           echo "##body" >> final_result.txt
           echo "*#%#//scriptlet('prevent-canvas')" >> final_result.txt
