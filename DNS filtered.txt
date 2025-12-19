@@ -103,6 +103,8 @@ vkcdnservice.appspot.com^
 ||mediate-ios-*.hyprmx.com^
 ||production-adserver-*.amazonaws.com^
 ||rtbimp-loadbalancer-*.amazonaws.com^
+||collector-*.px-cloud.net^
+||collector-*.pxchk.net^
 ||matomo-demo-*.amazonaws.com^
 ||*-default-cn.rum.aliyuncs.com^
 ||*-sdk.rum.aliyuncs.com^
@@ -301,6 +303,7 @@ dlsdk.appsflyersdk.com^
 ||*inapps.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||kbox-analytics-prod.s*.amazonaws.com^
 ||stats.*.ronghub.com^
 ||stats.*.rongnav.com^
 ||sdk.fra-*.braze.eu^
@@ -324,6 +327,7 @@ dlsdk.appsflyer.com^
 ||tnc*.tiktokv.com^
 ||log*-normal-*.tiktokv.com
 ||ulog*.kwai-pro.com^
+||mon-v*-boot.capcutapi.com^
 ||tnc-va*.capcutapi.com^
 ||mon-va*.capcutapi.com^
 ||log-va*.capcutapi.com^
@@ -637,6 +641,7 @@ analytics-*.aasaam.com
 ||tracking.olx.
 ||dualstack.adbert-web-lbs-*.elb.amazonaws.com^
 ||s*.adduplex.com^
+@@||content.viralize.tv^|
 @@||www.datadoghq-browser-agent.com^|
 @@||itoya.ec-optimizer.com^|
 @@||go.redirectingat.com^|
