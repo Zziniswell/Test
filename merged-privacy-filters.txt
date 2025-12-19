@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.19.8
+! Version: 25.12.20.1
 
 !! Merged rules
 
@@ -7803,6 +7803,10 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||onegg.site^
+||log.smartclearpro.com^
+||analytics.artworkout.net^
+||event.mwm-bs.com^
 ||events.backtrace.io^
 ||kbox-analytics-prod.s*.amazonaws.com^
 ||logs.classdojo.com^
@@ -16452,6 +16456,7 @@ analytics-*.aasaam.com
 @@||showheroes.com/pubtag.js$domain=rollingstone.de
 @@||siteintercept.qualtrics.com/$domain=idealo.de
 @@||sophi.io/assets/demeter/$script,domain=faz.net
+@@||spezialklinik-neukirchen.de/matomo/$~third-party
 @@||spiegel.de/layout/js/http/netmind-$script
 @@||taboola.com/libtrc/$script,domain=bild.de|computerbild.de|fitbook.de|jetzt.de|metal-hammer.de|musikexpress.de|noizz.de|rollingstone.de|stylebook.de|sueddeutsche.de|techbook.de|travelbook.de|welt.de|wieistmeineip.at|wieistmeineip.ch|wieistmeineip.de
 @@||technical-service.net^$xmlhttprequest,domain=n-tv.de|rtl.de|vip.de
@@ -25448,6 +25453,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||ensighten.com/error/e.php?
 ||envato.market/i/
 ||epimg.net/js/gdt/
+||episerver.net/ia.js
 ||epl.paypal-communication.com^$script
 ||epromote.co.za/track/
 ||eq.userneeds.com^
@@ -26947,6 +26953,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||telemetry.reembed.com^
 ||telemetry.smartframe.io^
 ||telemetry.soundcloud.com^
+||telemetry.svc.transifex.net^
 ||telemetry.tableausoftware.com^
 ||telemetry.transcend.io^
 ||telemetry.vtex.com^
