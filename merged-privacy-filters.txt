@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.20.1
+! Version: 25.12.20.2
 
 !! Merged rules
 
@@ -9030,6 +9030,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||api.cmp.inmobi.com/?log=
 ||techlore.tech/public/ghost-stats.min.js
 ||vinted.*/relay/events
 ||nordvpn.com/static/TrackersRuntimeScript.
@@ -15106,6 +15107,8 @@ vkcdnservice.appspot.com^
 ||mediate-ios-*.hyprmx.com^
 ||production-adserver-*.amazonaws.com^
 ||rtbimp-loadbalancer-*.amazonaws.com^
+||collector-*.px-cloud.net^
+||collector-*.pxchk.net^
 ||matomo-demo-*.amazonaws.com^
 ||*-default-cn.rum.aliyuncs.com^
 ||*-sdk.rum.aliyuncs.com^
@@ -15304,6 +15307,7 @@ dlsdk.appsflyersdk.com^
 ||*inapps.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||kbox-analytics-prod.s*.amazonaws.com^
 ||stats.*.ronghub.com^
 ||stats.*.rongnav.com^
 ||sdk.fra-*.braze.eu^
@@ -15327,6 +15331,7 @@ dlsdk.appsflyer.com^
 ||tnc*.tiktokv.com^
 ||log*-normal-*.tiktokv.com
 ||ulog*.kwai-pro.com^
+||mon-v*-boot.capcutapi.com^
 ||tnc-va*.capcutapi.com^
 ||mon-va*.capcutapi.com^
 ||log-va*.capcutapi.com^
@@ -15640,6 +15645,7 @@ analytics-*.aasaam.com
 ||tracking.olx.
 ||dualstack.adbert-web-lbs-*.elb.amazonaws.com^
 ||s*.adduplex.com^
+@@||content.viralize.tv^|
 @@||www.datadoghq-browser-agent.com^|
 @@||itoya.ec-optimizer.com^|
 @@||go.redirectingat.com^|
@@ -20568,6 +20574,7 @@ omni.soundestlink.com$image
 ||convert.guru/pageview^
 ||cookpad.com/*/activity_logs
 ||copilot-telemetry.githubusercontent.com^
+||core-features.cambridge.org/proxy/client/metrics
 ||count.all.biz^
 ||count.darkreader.app^
 ||count.rin.ru^
@@ -21262,7 +21269,6 @@ omni.soundestlink.com$image
 ||navan.com/api/analytics
 ||nbarizona.com/metrics/
 ||nbc.com/webevents/
-||nbcnews.com/_next/static/chunks/ads.$script,domain=nbcnews.com
 ||neatorama.com/story/view/
 ||neeva.com/logql/log
 ||neighbourly.co.nz/event-tracking
