@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.21.1
+! Version: 25.12.21.2
 
 !! Merged rules
 
@@ -14346,6 +14346,9 @@ mail.ferret-one.com%2Fbeacon$image
 !
 ! NOTE: Specific rules
 !
+! deepl.com
+deepl.qualtrics.com/subscription/watermark.gif?
+deepl.qualtrics.com%2Fsubscription%2Fwatermark.gif%3F
 ! https://github.com/easylist/easylist/issues/22715
 onelink.soundcloud.com/v1/emailopen$image
 onelink.soundcloud.com%2Fv1%2Femailopen$image
@@ -27014,6 +27017,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||tpx.tesseradigital.com^
 ||tr-experiments.parsely.com^
 ||tr-op.datatrics.com^
+||tr.attribuly.com^
 ||tr.cloud-media.fr^
 ||tr.datatrics.com^
 ||tr.marsflag.com^
