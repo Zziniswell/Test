@@ -55,7 +55,7 @@ jobs:
             return 0
           }
           
-          download_filter "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt" "original.txt"
+          download_filter "https://filters.adtidy.org/windows/filters/15.txt" "original.txt"
           
           if [ "$CRITICAL_FAILURE" == "true" ]; then
             echo "Download failed. Exiting."
