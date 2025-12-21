@@ -34,7 +34,6 @@
 ||prebid-*.rubiconproject.com^
 ||pijama.*.elasticbeanstalk.com^
 ||pl.ua^$badfilter
-||linksprf.com^$badfilter
 .n.2.1.js^
 .n.2.1.l60.js^
 .1.1.1.l80.js^
@@ -104,8 +103,6 @@ vkcdnservice.appspot.com^
 ||mediate-ios-*.hyprmx.com^
 ||production-adserver-*.amazonaws.com^
 ||rtbimp-loadbalancer-*.amazonaws.com^
-||deloton.com$important
-||oclasrv.com$important
 ||collector-*.px-cloud.net^
 ||collector-*.pxchk.net^
 ||matomo-demo-*.amazonaws.com^
@@ -540,15 +537,8 @@ dlsdk.appsflyer.com^
 /^(mon|tue|wed|thu|fri|sat|sun)\d{1,2}\.\w{2}\d{1,6}\w{4}\.com$/
 ||ad*.on.cc^
 ||h3v9p8x2q1r7-agckaeh6g2ehcaes.*.azurewebsites.net^
-# This lists only contains domains which are used for ads, tracking or popups. it does not block in-HTML elements.
-# For use, simply copy paste this into your computers' HOSTS file. See https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system
-# A hosts file that aims to get rid of ads, tracking, scams & badware on (mostly) Swedish websites
-# ----
-# title:          Frellwit's Swedish Hosts File
-# last updated:   2025-12-14 06:27:14 CET
-# entries:        1156
-# format:         hosts (hosts -- in hosts file format)
-# homepage:       https://github.com/lassekongo83/Frellwits-filter-lists/
+# title: Frellwit's Swedish Hosts File
+# homepage: https://github.com/lassekongo83/Frellwits-filter-lists/
 -ad123-
 -banner-ads.
 -banner728x90.
@@ -632,154 +622,7 @@ dlsdk.appsflyer.com^
 ||uc*.atobo.com^
 ||union*.365inews.com^
 ||ysdm*.ys137.com.cn^
-# >> A <<
 analytics-*.aasaam.com
-# https://twitter.com/Nikolaona/status/1699167838697652322
-# ^ Used by irna.ir
-# >> B <<
-# >> C <<
-# Example: tamasha.com/v/DDlMB
-# >> D <<
-# https://forum.adguard.com/index.php?threads/vigiato-net-resolved.44366/
-# https://github.com/AdguardTeam/AdguardFilters/issues/79983
-# ^ Used by Digiato, Vigiato, Rooziato
-# >> E <<
-# >> F <<
-#  TODO: Check for breakages (used by tamasha.com), investigate into more tracking
-# >> G <<
-# >> H <<
-# Example: behtarino.com
-# Example: androidha.com
-# >> I <<
-# >> J <<
-# >> K <<
-# Example: asrakhbar.com
-# >> L <<
-# >> M <<
-# Example: uploadgoogle.com
-# ^ Used by digikala.com
-# >> N <<
-# Example: sahebkhabar.ir
-# >> O <<
-# >> P <<
-# ^ Example: eghtesadonline.com
-# ^ Example: par30games.net
-# TODO: Remove it, Used by marzfun.com
-#  TODO: Remove it, Used by dlfox.com
-# ^ Example: imovie-dl.org
-# >> Q <<
-# >> R <<
-# >> S <<
-# power-music.ir, skmusic.ir, music-week.ir
-# Example: gapfilm.ir
-# Used by i-video.ir
-# ^ Used by kojaro.com
-# >> T <<
-# Example: anaj.ir
-# tavoos.net
-# ^ Example: film.tebyan.net
-# OISD maintainer: If a domain is used for ads, but also is required for "wanted content" (like video playback) it should not be blocked by domain/hosts lists. But rather left to handle by content blockers instead. (uBlock Origin, etc).
-# TODO: Investigate
-# >> A <<
-# https://github.com/MasterKia/PersianBlocker/issues/210
-# >> B <<
-# >> C <<
-# >> D <<
-# >> E <<
-# >> F <<
-# https://github.com/MasterKia/PersianBlocker/issues/107
-# >> G <<
-# >> H <<
-# >> I <<
-# >> J <<
-# >> K <<
-# https://github.com/MasterKia/PersianBlocker/issues/101
-# >> L <<
-# >> M <<
-# Referral links disguised as movie download links
-# https://mediawach. com/introducing-telegram-app-for-mobile-standard-and-premium-versions/
-# On zarebin.ir
-# >> N <<
-# >> O <<
-# https://github.com/MasterKia/PersianBlocker/issues/93
-# >> P <<
-# >> Q <<
-# >> R <<
-# >> S <<
-# sheypoor.com
-# https://github.com/MasterKia/PersianBlocker/issues/125
-# >> T <<
-# >> U <<
-# >> V <<
-# https://github.com/MasterKia/PersianBlocker/issues/219
-# https://github.com/MasterKia/PersianBlocker/issues/121
-# >> W <<
-# >> X <<
-# >> Y <<
-# >> Z <<
-# https://webamoozcom.github.io/warning-list/
-# Discussion?
-# Discussion?
-# Discussion?
-# آمیتیس?
-# https://github.com/Webamoozcom/warning-list/discussions/41
-# What domain?
-# https://github.com/Webamoozcom/warning-list/discussions/127
-# What domain?
-# https://github.com/Webamoozcom/warning-list/discussions/131
-# What domain?
-# https://github.com/Webamoozcom/warning-list/discussions/12
-# https://github.com/Webamoozcom/warning-list/discussions/17
-# https://github.com/Webamoozcom/warning-list/discussions/19
-# https://github.com/Webamoozcom/warning-list/discussions/23
-# https://github.com/Webamoozcom/warning-list/discussions/26
-# https://github.com/Webamoozcom/warning-list/discussions/27
-# https://github.com/Webamoozcom/warning-list/discussions/29
-# https://github.com/Webamoozcom/warning-list/discussions/30
-# https://github.com/Webamoozcom/warning-list/discussions/34
-# https://github.com/Webamoozcom/warning-list/discussions/37
-# https://github.com/Webamoozcom/warning-list/discussions/38
-# https://github.com/Webamoozcom/warning-list/discussions/39
-# https://github.com/Webamoozcom/warning-list/discussions/43
-# https://github.com/Webamoozcom/warning-list/discussions/45
-# https://github.com/Webamoozcom/warning-list/discussions/49
-# https://github.com/Webamoozcom/warning-list/discussions/50
-# https://github.com/Webamoozcom/warning-list/discussions/52
-# https://github.com/Webamoozcom/warning-list/discussions/56
-# https://github.com/Webamoozcom/warning-list/discussions/58
-# https://github.com/Webamoozcom/warning-list/discussions/60
-# https://github.com/Webamoozcom/warning-list/discussions/65
-# https://github.com/Webamoozcom/warning-list/discussions/66
-# https://github.com/Webamoozcom/warning-list/discussions/70
-# https://github.com/Webamoozcom/warning-list/discussions/74
-# https://github.com/Webamoozcom/warning-list/discussions/77
-# https://github.com/Webamoozcom/warning-list/discussions/80
-# https://github.com/Webamoozcom/warning-list/discussions/84
-# https://github.com/Webamoozcom/warning-list/discussions/86
-# https://github.com/Webamoozcom/warning-list/discussions/87
-# https://github.com/Webamoozcom/warning-list/discussions/88
-# https://github.com/Webamoozcom/warning-list/discussions/89
-# https://github.com/Webamoozcom/warning-list/discussions/90
-# https://github.com/Webamoozcom/warning-list/discussions/92
-# https://github.com/Webamoozcom/warning-list/discussions/94
-# https://github.com/Webamoozcom/warning-list/discussions/119
-# https://github.com/Webamoozcom/warning-list/discussions/129
-# https://github.com/Webamoozcom/warning-list/discussions/130
-# https://github.com/Webamoozcom/warning-list/discussions/132
-# https://github.com/Webamoozcom/warning-list/discussions/138
-# https://github.com/Webamoozcom/warning-list/discussions/170
-# https://github.com/Webamoozcom/warning-list/discussions/171
-# https://github.com/Webamoozcom/warning-list/discussions/174
-# https://github.com/Webamoozcom/warning-list/discussions/184
-# https://github.com/Webamoozcom/warning-list/discussions/185
-# https://github.com/Webamoozcom/warning-list/discussions/192
-# https://github.com/MasterKia/PersianBlocker/pull/201
-# https://webamooz.com/1402/06/25/%D9%84%D8%A7%DA%A9%D8%B3%D9%88%D9%86-laxxson-%DA%A9%D9%84%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D9%BE%D8%A7%D9%86%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA/
-# https://github.com/Blockunity/Warning-List/discussions/44
-# https://github.com/MasterKia/PersianBlocker/issues/291
-# https://support.google.com/chrome/thread/292146023?hl=en&msgid=292530924
-# https://storage.googleapis.com/support-forums-api/attachment/thread-292146023-803929150591620091.jpg
-# AdlIran scam
 ||get*bannerads-6egeg2u34q-du.a.run.app^
 ||pangolin*.sgsnssdk.com^
 ||ad.*.doubleclick.net^
