@@ -303,6 +303,7 @@ dlsdk.appsflyersdk.com^
 ||*inapps.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||collector-*.perimeterx.net^
 ||kbox-analytics-prod.s*.amazonaws.com^
 ||stats.*.ronghub.com^
 ||stats.*.rongnav.com^
