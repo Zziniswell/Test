@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.23.1
+! Version: 25.12.23.2
 
 !! Merged rules
 
@@ -7805,6 +7805,8 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||unisdk.proxima.nie.easebar.com^
+||ingest.m2catalyst.com^
 ||tnc-v2-boot.capcutapi.com^
 ||onegg.site^
 ||log.smartclearpro.com^
@@ -14538,8 +14540,8 @@ t.gutefrage.net%2Fop%2F$image
 ae.mmstat.com/ae.edm.edm_open?$image
 ae.mmstat.com%2Fae.edm.edm_open%3F$image
 ! Eloqua
-/e3t/Cto/RK$image
-%2Fe3t%2FCto%2FRK$image
+/e3t/Cto/*$image
+%2Fe3t%2FCto%2F$image
 ! infomaniak.com
 click.official.infomaniak.com%2Fo%2F
 click.official.infomaniak.com/o/$image
@@ -25069,6 +25071,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||camel.headfarming.com^
 ||campaign.fbot.me^
 ||canada.com/js/analytics/
+||capi.connatix.com^
 ||capture-api.ap3prod.com^
 ||capture.condenastdigital.com^
 ||capture.trackjs.com^$third-party
@@ -25341,6 +25344,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||crowdtwist.com/trck/$script
 ||crta.and.co.uk^
 ||crta.dailymail.co.uk^
+||cs.media.net^
 ||cs.zg-api.com^
 ||csi.gstatic.com^
 ||csp-collector.appspot.com^
