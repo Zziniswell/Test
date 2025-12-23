@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.23.2
+! Version: 25.12.23.3
 
 !! Merged rules
 
@@ -31,6 +31,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220829
+@@||collector-*.px-cloud.net^$xmlhttprequest,domain=ifood.com.br
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220570
 @@||static.vocstatic.com/voonto2/latest/voonto.js$script,domain=lagacetadesalamanca.es
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219868
@@ -5906,6 +5908,10 @@ $cookie=DEVICEFP_SEED_TIME,domain=mihoyo.com|hoyoverse.com
 $cookie=_HFID,domain=womenshealthmag.com|bicycling.com|bestproducts.com|caranddriver.com|cosmopolitan.com|countryliving.com|delish.com|elledecor.com|elle.com|esquire.com|goodhousekeeping.com|harpersbazaar.com|housebeautiful.com|oprahdaily.com|prevention.com|redbookmag.com|roadandtrack.com|runnersworld.com|seventeen.com|townandcountrymag.com|veranda.com|womansday.com|autoweek.com|thepioneerwoman.com|popularmechanics.com
 $cookie=_perhip,domain=womenshealthmag.com|bicycling.com|bestproducts.com|caranddriver.com|cosmopolitan.com|countryliving.com|delish.com|elledecor.com|elle.com|esquire.com|goodhousekeeping.com|harpersbazaar.com|housebeautiful.com|oprahdaily.com|prevention.com|redbookmag.com|roadandtrack.com|runnersworld.com|seventeen.com|townandcountrymag.com|veranda.com|womansday.com|autoweek.com|thepioneerwoman.com|popularmechanics.com
 $cookie=mosb,domain=womenshealthmag.com|bicycling.com|bestproducts.com|caranddriver.com|cosmopolitan.com|countryliving.com|delish.com|elledecor.com|elle.com|esquire.com|goodhousekeeping.com|harpersbazaar.com|housebeautiful.com|oprahdaily.com|prevention.com|redbookmag.com|roadandtrack.com|runnersworld.com|seventeen.com|townandcountrymag.com|veranda.com|womansday.com|autoweek.com|thepioneerwoman.com|popularmechanics.com
+! businessinsider.com
+||businessinsider.com^$cookie=universal_id
+||businessinsider.com^$cookie=anonymous_id
+||businessinsider.com^$cookie=fenrir_anonymous_id
 ! businessinsider.jp
 ||businessinsider.jp^$cookie=mgppid
 ||businessinsider.jp^$cookie=ppid
@@ -9037,6 +9043,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+businessinsider.com#%#//scriptlet('set-local-storage-item', 'fenrir_anonymous_id', '$remove$')
+businessinsider.com#%#//scriptlet('set-local-storage-item', 'anonymous_id', '$remove$')
+businessinsider.com#%#//scriptlet('set-local-storage-item', 'universal_id', '$remove$')
 ||affirm.com/api/*/touch_track
 ||data.joongna.com/log/
 ||api.cmp.inmobi.com/?log=
@@ -14291,9 +14300,10 @@ gmarket.co.kr#%#//scriptlet('fingerprintjs2')
 %2Fa360%2Fpublic%2Fstatistic%2F$image
 ! sendy.co
 %2Ft%*%2Fa^$image
+! https://github.com/AdguardTeam/AdguardFilters/issues/220818
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219953
 !+ NOT_PLATFORM(ios, ext_safari)
-/t/*/a^$image
+/t/*/a^$image,domain=~permies.com
 ! tinyemail.com, SNRbox and maybe other
 /pix.gif?$image
 %2Fpix.gif%3F$image
@@ -19305,7 +19315,6 @@ analytics-*.aasaam.com
 /tracking/user_sync_widget?
 /tracking/views/*
 /tracking202/static/landing.php
-/Tracking?id=
 /tracking?referrer
 /Tracking?t=
 /tracking?vs=
