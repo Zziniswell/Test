@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.23.3
+! Version: 25.12.24.1
 
 !! Merged rules
 
@@ -7811,6 +7811,7 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||collector-*.perimeterx.net^
 ||unisdk.proxima.nie.easebar.com^
 ||ingest.m2catalyst.com^
 ||tnc-v2-boot.capcutapi.com^
@@ -9043,6 +9044,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||skat.com.ua/api/collect
 businessinsider.com#%#//scriptlet('set-local-storage-item', 'fenrir_anonymous_id', '$remove$')
 businessinsider.com#%#//scriptlet('set-local-storage-item', 'anonymous_id', '$remove$')
 businessinsider.com#%#//scriptlet('set-local-storage-item', 'universal_id', '$remove$')
@@ -16291,6 +16293,7 @@ analytics-*.aasaam.com
 @@||trackjs.com/agent/$script,domain=delta.com
 @@||trackonomics.net/client/$script,domain=popsugar.com
 @@||travel-assets.com/platform-analytics-prime/$domain=chase.com
+@@||try.abtasty.com^$script,domain=tickpick.com
 @@||tunein.com/api/v1/comscore$~third-party
 @@||unpkg.com/@adobe/magento-storefront-event-collector@$domain=osprey.com
 @@||userapi.com^*.gif?extra=$image,domain=vk.com
