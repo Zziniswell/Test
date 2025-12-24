@@ -303,6 +303,8 @@ dlsdk.appsflyersdk.com^
 ||*inapps.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||track-*.hungrypanda.co^
+||trace-*.hungrypanda.co^
 ||collector-*.perimeterx.net^
 ||kbox-analytics-prod.s*.amazonaws.com^
 ||stats.*.ronghub.com^
@@ -642,6 +644,7 @@ analytics-*.aasaam.com
 ||tracking.olx.
 ||dualstack.adbert-web-lbs-*.elb.amazonaws.com^
 ||s*.adduplex.com^
+@@||link.nzz.ch^|
 @@||content.viralize.tv^|
 @@||www.datadoghq-browser-agent.com^|
 @@||itoya.ec-optimizer.com^|
