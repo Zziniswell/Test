@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.24.3
+! Version: 25.12.25.1
 
 !! Merged rules
 
@@ -7812,6 +7812,12 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||vsn-analytics.aparentmedia.com^
+||track-*.hungrypanda.co^
+||trace-*.hungrypanda.co^
+||ihmonitor.luckincoffee.us^
+||use-trk.monetune.com^
+||telemetry.sdk.inmobi.com^
 ||collector-*.perimeterx.net^
 ||unisdk.proxima.nie.easebar.com^
 ||ingest.m2catalyst.com^
@@ -9045,6 +9051,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||lemrock.com/v1/publishers/tracking/
+||play.vidyard.com/api/metrics
+||reports.adguard.com/-/metrics/
 ||tvchosun.com/dhitlog/
 ||skat.com.ua/api/collect
 businessinsider.com#%#//scriptlet('set-local-storage-item', 'fenrir_anonymous_id', '$remove$')
@@ -10054,6 +10063,8 @@ hindustantimes.com#%#//scriptlet('set-local-storage-item', 'ht_cdp', '$remove$')
 ||assets.aliexpress-media.com/g/AWSC/WebUMID/*/um.js
 ||assets.aliexpress-media.com/g/ae-fe/cosmos/*/pc/nano-ppc-media-tracking-YnuuQ.js
 ||assets.aliexpress-media.com/g/??alilog/aplus_plugin_aefront/index.js,alilog/mlog/aplus_int.js
+||assets.aliexpress-media.com/g/lzd_sec/epssw/*/epssw.js
+||assets.aliexpress-media.com/g/AWSC/uab/*/collina.js
 ||assets.alicdn.com/g/lzd_sec/epssw/*/epssw.js
 ||assets.alicdn.com/g/alilog/
 ||app.tag-plus.com/ja/api/v1/unison_planet/heat_map
@@ -14367,6 +14378,9 @@ mail.ferret-one.com%2Fbeacon$image
 !
 ! NOTE: Specific rules
 !
+! https://github.com/easylist/easylist/issues/22758
+mail01.monex.co.jp/bin/checker?$image
+mail01.monex.co.jp%2Fbin%2Fchecker%3F$image
 ! deepl.com
 deepl.qualtrics.com/subscription/watermark.gif?
 deepl.qualtrics.com%2Fsubscription%2Fwatermark.gif%3F
@@ -20169,6 +20183,7 @@ _WebVitalsReporter_
 ://line.karte.io/CI0/$image
 ://links.flickr.com/s/eo/$image
 ://links.paypal.*/eos/$image
+://mail01.monex.co.jp/bin/checker?
 ://mailmag.hhcross.hankyu-hanshin.jp/c/*.gif
 ://openedlog.
 ://parcel-api.delivery-status.*/open/$image
@@ -20532,6 +20547,7 @@ omni.soundestlink.com$image
 ||click.nudevista.com^
 ||clickindia.com/cimem/ad-post-ajax.php?FormName=browsingHistory
 ||clickins.slixa.com^
+||client-errors.rebble.io/log-client-error
 ||client-log.box.com^
 ||client-metrics.chess.com^
 ||cloudflare.com/_cf/analytics.js
@@ -25993,6 +26009,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||lederer.nl/incl/stats.js.php?
 ||legacy.com/globalscripts/tracking/
 ||legacy.com^*/unicaclicktracking.js?
+||lemrock.com/v1/publishers/tracking/
 ||letv.com/cloud_pl/
 ||letv.com/env/
 ||levelaccess.net/analytics/
