@@ -29,18 +29,14 @@ jobs:
             local SUCCESS=0
             
             while [ $ATTEMPT -le $MAX_RETRIES ]; do
-              echo "Downloading: $OUTPUT (Attempt $ATTEMPT/$MAX_RETRIES) ..."
               curl -sL "$URL" -o "$OUTPUT" || true
               LINES=$(wc -l < "$OUTPUT" || echo 0)
               
-              if [ "$LINES" -ge 50 ]; then
-                echo "Success: $OUTPUT downloaded with $LINES lines"
+              if [ "$LINES" -ge 10000 ]; then
                 SUCCESS=1
                 break
               else
-                echo "Fail: $OUTPUT (Lines: $LINES)"
                 if [ $ATTEMPT -lt $MAX_RETRIES ]; then
-                  echo "Waiting $DELAY seconds before retry..."
                   sleep $DELAY
                 fi
                 ATTEMPT=$((ATTEMPT + 1))
@@ -48,7 +44,6 @@ jobs:
             done
             
             if [ $SUCCESS -eq 0 ]; then
-              echo "Final Failure: $OUTPUT could not be downloaded."
               echo "CRITICAL_FAILURE=true" >> $GITHUB_ENV
               return 1
             fi
@@ -58,31 +53,43 @@ jobs:
           download_filter "https://filters.adtidy.org/windows/filters/15.txt" "original.txt"
           
           if [ "$CRITICAL_FAILURE" == "true" ]; then
-            echo "Download failed. Exiting."
             exit 1
           fi
+
+          awk '
+          /^[!#]/ { next }
+          /^\s*$/ { next }
           
-          awk '!/^!/ && (index($0, "*") || !/\^\s*$/ || !/^\|/)' original.txt > "DNS filtered.txt"
+          /^@@/ {
+              content = substr($0, 3)
+              if (content !~ /^\|/ || content ~ /\*/ || content ~ /\//) {
+              } else {
+                  next
+              }
+          }
+
+          {
+              if ($0 ~ /\$badfilter$/ || $0 ~ /\|$/) {
+                  print $0
+              } else if ($0 ~ /\$important/) {
+                  print $0 ",all"
+              } else {
+                  print $0 "$all"
+              }
+          }
+          ' original.txt > "DNS filtered.txt"
           
           LINE_COUNT=$(grep -cve '^\s*$' "DNS filtered.txt" || true)
           
-          if [ "$LINE_COUNT" -gt 1000 ]; then
-            > "DNS filtered.txt"
-            echo "Result: 0 lines (Fail-safe triggered - $LINE_COUNT > 1000)"
-          else
-            echo "Success: $LINE_COUNT rules extracted."
+          if [ "$LINE_COUNT" -gt 1000 ] || [ "$LINE_COUNT" -eq 0 ]; then
+            exit 1
           fi
           
           rm original.txt
 
       - name: Deploy to Isolate Branch
-        if: always()
+        if: success()
         run: |
-          if [ "$CRITICAL_FAILURE" == "true" ]; then
-             echo "Critical Download Failure Detected. Canceling Update."
-             exit 1
-          fi
-          
           mkdir -p /tmp/filter_output
           mv "DNS filtered.txt" /tmp/filter_output/
           
@@ -100,11 +107,10 @@ jobs:
           fi
           
           mv /tmp/filter_output/"DNS filtered.txt" .
-          
           git add "DNS filtered.txt"
           
           if git diff --staged --quiet; then
-            echo "No changes detected."
+            echo "No changes"
           else
             git commit -m "Auto update DNS filtered rules: $(date +'%Y-%m-%d %H:%M:%S') KST"
             git push origin Isolate
