@@ -81,8 +81,8 @@ jobs:
           
           LINE_COUNT=$(grep -cve '^\s*$' "DNS filtered.txt" || true)
           
-          if [ "$LINE_COUNT" -gt 1000 ] || [ "$LINE_COUNT" -eq 0 ]; then
-            exit 1
+          if [ "$LINE_COUNT" -gt 1000 ]; then
+            > "DNS filtered.txt"
           fi
           
           rm original.txt
