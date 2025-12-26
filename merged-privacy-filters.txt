@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.26.4
+! Version: 25.12.26.5
 
 !! Merged rules
 
@@ -15606,7 +15606,7 @@ dlsdk.appsflyer.com^$all
 -720x90-$all
 -728x90a.$all
 .1080.x.90.$all
-@@/\.(gif|jpe?g|png|webp)#(\/?.+)?(\/(ad)s?\/|\/ad-)/$all
+!@@/\.(gif|jpe?g|png|webp)#(\/?.+)?(\/(ad)s?\/|\/ad-)/
 -bandarkiu.$all
 -tototix.gif$all
 ||admicro*.vcmedia.vn^$all
@@ -15686,17 +15686,17 @@ analytics-*.aasaam.com$all
 ||tracking.olx.$all
 ||dualstack.adbert-web-lbs-*.elb.amazonaws.com^$all
 ||s*.adduplex.com^$all
-@@||cdn.us*.exponea.com^|
-@@||data-*.herz-fuer-tiere.de^|
-@@||bcicl.*.evergage.com^|
-@@||static-v*.trbo.com^|
-@@||api-v*.trbo.com^|
-@@||brm-core-*.brsrvr.com^|
-@@-ds.metric.gstatic.com^|
-@@||email.*.skyeng.ru^|
-@@||click.virt.s*.exacttarget.com^|
-@@||mc.*.exacttarget.com^|
-@@||clk*.tradedoubler.com^|
+!@@||cdn.us*.exponea.com^|
+!@@||data-*.herz-fuer-tiere.de^|
+!@@||bcicl.*.evergage.com^|
+!@@||static-v*.trbo.com^|
+!@@||api-v*.trbo.com^|
+!@@||brm-core-*.brsrvr.com^|
+!@@-ds.metric.gstatic.com^|
+!@@||email.*.skyeng.ru^|
+!@@||click.virt.s*.exacttarget.com^|
+!@@||mc.*.exacttarget.com^|
+!@@||clk*.tradedoubler.com^|
 
 !
 ! This section contains the list of generic blocking rules (mobile sites or apps).
