@@ -79,12 +79,8 @@ jobs:
           {
             if (/^@@/) {
               print "!" $0
-            } else if ($0 ~ /\$badfilter$/ || $0 ~ /\|$/) {
-              print $0
-            } else if ($0 ~ /\$important/) {
-              print $0 ",all"
             } else {
-              print $0 "$all"
+              print $0
             }
           }
           ' original.txt > "DNS filtered.txt"
