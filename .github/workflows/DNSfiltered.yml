@@ -63,6 +63,7 @@ jobs:
           fi
           
           awk '
+          { sub(/\r$/, "") }
           /^[!#]/ { next }
           /^\s*$/ { next }
           {
