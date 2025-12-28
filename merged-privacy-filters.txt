@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.28.2
+! Version: 25.12.28.3
 
 !! Merged rules
 
@@ -19126,6 +19126,7 @@ analytics-*.aasaam.com
 /track_visit?
 /track_visitor?
 /trackBatchEvents?
+/trackbee.min.js
 /TrackClick.
 /trackClickEvent.js
 /trackconversion?
@@ -21901,6 +21902,7 @@ omni.soundestlink.com$image
 ||upwork.com/upi/jslogger
 ||urs.metacritic.com^
 ||useblackbox.io/telemetry
+||user-back.ggcorp.me/statistics
 ||user-metrics.onthemarket.com^
 ||usmetric.rediff.com^
 ||usnews.com/static/esi/usn-geo.json
@@ -22254,6 +22256,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||as.mytoys.de^
 ||as.yomonda.de^
 ||autoscout24.de^$ping
+||aw.perlesandco.com^
 ||basicthinking.de/stats/
 ||behave.sn.at^
 ||berliner-stadtplan.com/t.gif
@@ -24497,6 +24500,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||aliyun.com/actionlog/
 ||allanalpass.com/track/
 ||alpharank.io/api/pixel/
+||amazon.com/cs/uedata
 ||amazonaws.com/analytics.
 ||amazonaws.com/appmonitors/
 ||amazonaws.com/avsmetrics/
@@ -24718,6 +24722,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||api.mambasms.com/monitorEvent/
 ||api.picox.bendingspoons.com/v1/events
 ||api.sardine.ai/assets/loader.min.js$third-party
+||api.sovendus.com/js/landing.js
 ||api.visitorapi.com^$third-party
 ||api.wipmania.com^
 ||apibaza.com/pixel/
@@ -24739,6 +24744,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||app.qualified.com/*/visitor_events
 ||app.revenuehero.io/logs/ingest
 ||app.trytada.com/addImpression
+||app.varify.io/varify.js
 ||app.yesware.com/t/$third-party
 ||appinthestore.com/click/
 ||apple.com/hvr/mw/v1/spile
@@ -24959,6 +24965,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||cdn-ds.com/analytics/
 ||cdn-eu.usefathom.com^
 ||cdn-staging.delivr.ai/pixels/
+||cdn.9gtb.com^
 ||cdn.app.cfigroup.com/webmon/$script
 ||cdn.clkmc.com/cmc.js
 ||cdn.cuty.io/fps.js
@@ -25789,6 +25796,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||jly24aw29n5m-a.akamaihd.net^
 ||jobvite.com/analytics.js
 ||jotform.io/getReferrer/$third-party
+||js.cdn.applicationinsights.io/scripts/b/ai.3.gbl.min.js
 ||js.go2sdk.com/v2/tune.js
 ||js.verisoul.ai^
 ||jscache.com/static/page_moniker/
@@ -25880,6 +25888,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||listrak.com/api/Activity/impression
 ||listrakbi.com/activity/
 ||listrakbi.com/api/ActivityEvents/
+||listrakbi.com/ModalImpression.ashx?
 ||lit.connatix.com^
 ||literally-analytics.appspot.com^
 ||live-partner.com/tags?
@@ -26127,6 +26136,8 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||o.aolcdn.com/js/mg1.js
 ||o.momently.info^
 ||o9tt6h08li.execute-api.eu-west-1.amazonaws.com^
+||obs.branderblender.com^
+||obs.du89buildings.com^
 ||obs.esnlocco.com^
 ||obs.jollyoutdoorjogger.com^
 ||obs.system1onesource.com^
@@ -26789,6 +26800,8 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||t.mail.sony-europe.com/r/?
 ||t.menepe.com^
 ||t.metrilo.com^
+||t.mydialoginsight.com^
+||t.paypal.com/ts?
 ||t.pointandplace.com^
 ||t.powerreviews.com^$third-party
 ||t.raptorsmartadvisor.com^
@@ -27114,6 +27127,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||ucounter.ucoz.net^
 ||ucoz.net/stat/
 ||uct.service.usercentrics.eu^
+||ufe.helixo.co/scripts/sdk.min.js
 ||uhit.eu/id/$third-party
 ||uid.mediacorp.sg^
 ||uilogging.tcdevops.com^
@@ -27247,6 +27261,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||weglot.com/pageviews?
 ||wetpaint.com^*/track?
 ||wf.typesquare.com^
+||wgs.wgs-static.com^
 ||whooshkaa.com/identify
 ||whooshkaa.com/listen/track
 ||whoson.com/poll.gif
@@ -27274,6 +27289,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||wondershare.es/jslibs/track.js
 ||wordmonetize.com^$third-party
 ||wordpress.com/geo/
+||work.selecdoo.com^
 ||workers.dev/api/event
 ||workers.dev/js/script.js
 ||worldssl.net/reporting.js
@@ -27695,6 +27711,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||giga.de/vw/$image,third-party
 ||global-media.de^*/track/ai.img
 ||goldsilbershop.de/go.cgi?
+||gproxy-beta.mableai.workers.dev/wtag/js
 ||hbx.df-srv.de^
 ||hittracker.org/count.php
 ||hittracker.org/counter.php
@@ -27748,6 +27765,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||script.idgentertainment.de/gt.js
 ||serverkompetenz.net/cpx.php?
 ||sheego.de/ar/$third-party
+||shopper.shop.pe/input.js
 ||sim-technik.de/dvs.gif?
 ||sim-technik.de^*&uniqueTrackId=
 ||simetra.tracking.ringieraxelspringer.tech^
@@ -27780,6 +27798,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||tms.danzz.ch^
 ||top50-solar.de/solarcount/
 ||topblogs.de/tracker.php?
+||tr.metaflow.de^
 ||track2.cliplister.com^
 ||track2.dulingo.com^
 ||track2.mycliplister.com^
