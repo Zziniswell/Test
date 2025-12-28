@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 25.12.28.3
+! Version: 25.12.29.1
 
 !! Merged rules
 
@@ -9057,6 +9057,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||metrics.streaks.jp^$xmlhttprequest,redirect=nooptext
 ||temu.com/*/api/firefly/exp-config
 ||temu.com/api/faas-abtest-server/firefly-api/exp-config
 ||splunkcloud.com/services/collector/event|
@@ -28355,7 +28356,6 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||logs.chatboost-cv.algoage.co.jp^
 ||macromill.com/imp/
 ||mail-count.matsui.co.jp^
-||metrics.streaks.jp^
 ||mofa.go.jp^*/count.cgi?
 ||monipla.com/launch.js
 ||moshimo.com^*/impression?
