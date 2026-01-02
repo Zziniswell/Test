@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.02.2
+! Version: 26.01.02.3
 
 !! Merged rules
 
@@ -1689,8 +1689,6 @@ goodwillfinds.com#%#//scriptlet("set-constant", "_etmc", "emptyArr")
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128722
 @@||jssdkcdns.mparticle.com/js/v*/*/mparticle.js$domain=weather.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/128545
-||googletagservices.com/tag/js/gpt.js$xmlhttprequest,script,redirect=googletagservices-gpt,domain=thedailybeast.com,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128433
 @@||blob.core.windows.net/bge/src/js/google-analytics.js$domain=secure2.bge.com
 ! fix search
@@ -9071,6 +9069,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||static.speisekarte.de/build/ub-tracker.js
 ||omtrdc.net/rest/$ping
 ||hotpepper.jp/DEV/DEV_OPEN/CSP/log/
 ||uts-front.line-apps.com/event-web
