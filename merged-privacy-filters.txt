@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.03.1
+! Version: 26.01.03.2
 
 !! Merged rules
 
@@ -21126,6 +21126,7 @@ omni.soundestlink.com$image
 ||metrics.hackerrank.com^
 ||metrics.hyperliquid.xyz^
 ||metrics.imdb.com^
+||metrics.morethings.digital^
 ||metrics.onewegg.com^
 ||metrics.roblox.com^
 ||metrics.spkt.io^
@@ -21690,6 +21691,7 @@ omni.soundestlink.com$image
 ||t.goodchop.com^
 ||t.indeed.com^
 ||t.ionos.com^
+||t.jasper.ai^
 ||t.jossandmain.com^
 ||t.kck.st^
 ||t.lataco.com/collect
@@ -21937,6 +21939,7 @@ omni.soundestlink.com$image
 ||upwork.com/shasta/suit
 ||upwork.com/upi/jslogger
 ||urs.metacritic.com^
+||use.hetzner.com^
 ||useblackbox.io/telemetry
 ||user-back.ggcorp.me/statistics
 ||user-metrics.onthemarket.com^
