@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.04.1
+! Version: 26.01.04.2
 
 !! Merged rules
 
@@ -9069,6 +9069,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||cfm.kt.com/js/GA/staticsLogcodeBuilder.js
 ||reebok.jp/resources/js/analysis/tracker.js
 ||app.blogvault.net/assets/affpix.js
 ||cdn.live-widgets.com/tracker/
@@ -20818,6 +20819,7 @@ omni.soundestlink.com$image
 ||gnar.grammarly.com^
 ||gnavi.co.jp/analysis/
 ||go.fap18.net/ftt2/js.php
+||go.nutraingredients.com/pd.js
 ||go.pardot.com^
 ||go.thegrocer.co.uk^
 ||go.theregister.com^$image
@@ -21210,6 +21212,7 @@ omni.soundestlink.com$image
 ||nextdoor.*/ajax/ping_ndas/
 ||nextdoor.com/events/
 ||nflshop.com/api/track
+||nid.mansionglobal.com^
 ||nid.thesun.co.uk^
 ||nid.thetimes.com^
 ||nike.com/assets/measure/data-capture/
@@ -21721,6 +21724,7 @@ omni.soundestlink.com$image
 ||tags.stepstone.com^
 ||tahoe.com/imp
 ||taiwanplus.com/api/video/startVideo
+||talkingpointsmemo.com/whoami
 ||tao.barstoolsports.com^
 ||tapeadsenjoyer.com/stat/
 ||tapeadvertisement.com/stat/
