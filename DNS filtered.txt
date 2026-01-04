@@ -301,7 +301,6 @@ dlsdk.appsflyersdk.com^
 ||*cdn-settings.appsflyersdk.com^
 ||*launches.appsflyersdk.com^
 ||*conversions.appsflyersdk.com^
-||*inapps.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
 ||track-*.hungrypanda.co^
