@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.05.3
+! Version: 26.01.06.1
 
 !! Merged rules
 
@@ -40,8 +40,6 @@
 ! URL - https://www.enedis.fr/faire-le-releve-en-ligne
 @@||cdn.tagcommander.com/*/tc_ENEDIS_*.js$domain=frontend-mes-prms-part-cloud.enedis.fr
 enedis.fr#%#//scriptlet('set-constant', 'window.tc_vars', 'emptyObj')
-! https://github.com/AdguardTeam/AdguardFilters/issues/220829
-@@||collector-*.px-cloud.net^$xmlhttprequest,domain=ifood.com.br
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220570
 @@||static.vocstatic.com/voonto2/latest/voonto.js$script,domain=lagacetadesalamanca.es
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219868
@@ -6962,6 +6960,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/js/pixel.js|
 /apps/ssw/events-collector-lambda/events/*
 /sfp/universal_analytics.min.
 /ajax/whereami$ping
@@ -7131,9 +7130,6 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! ex. https://l.tenkomori.tv/script.php?i=5071tenmaya&site=blog.tenkomori.tv
 ://l.*/counter.php?id=$script,~third-party
 ://l.*/script.php?i=$script,~third-party
-!
-! https://github.com/AdguardTeam/AdguardFilters/issues/60875
-/facebookproductad/views/js/pixel.js
 !
 ! Facebook
 /js/fb_tracking.js
@@ -7826,6 +7822,7 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||tc.weszxdrf.com^
 ||log.hotweathers.live^
 ||log.eufylife.com^
 ||dts-log.anker.com^
@@ -10915,7 +10912,6 @@ thehindu.com###sectiondivicymi
 ||image.yodobashi.com/catalog/*/common/js/onetag.js
 ||api.lit.link/v1/access_logs/
 ||app.pep.work/api/analytics
-||asset.popin.cc/js/pixel.js
 ||consumer.huawei.com/content/*/clientlib-public-HiAnalyticsJSSDK/
 ||mayla.jp/tracking/
 ||toyota.jp/pages/contents/include/common/js/tjp_beacon.js
@@ -14419,6 +14415,9 @@ mail.ferret-one.com%2Fbeacon$image
 !
 ! NOTE: Specific rules
 !
+! it-recht-kanzlei.de
+it-recht-kanzlei.de/logo/Copyright-Logo.png?i=
+it-recht-kanzlei.de%2Flogo%2FCopyright-Logo.png%3Fi%3D
 ! https://github.com/easylist/easylist/issues/22758
 mail01.monex.co.jp/bin/checker?$image
 mail01.monex.co.jp%2Fbin%2Fchecker%3F$image
