@@ -103,7 +103,6 @@ vkcdnservice.appspot.com^
 ||mediate-ios-*.hyprmx.com^
 ||production-adserver-*.amazonaws.com^
 ||rtbimp-loadbalancer-*.amazonaws.com^
-||collector-*.px-cloud.net^
 ||collector-*.pxchk.net^
 ||matomo-demo-*.amazonaws.com^
 ||*-default-cn.rum.aliyuncs.com^
