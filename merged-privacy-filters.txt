@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.06.3
+! Version: 26.01.07.1
 
 !! Merged rules
 
@@ -7822,6 +7822,9 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||clck.yandex.ru^$app=com.edadeal.android
+||bstream.kzhi.tech^
+||lklfwu-inapps.appsflyersdk.com^
 ||mob2.welltastic-app.com^
 ||amplitude.thepure.app^
 ||amplilab.thepure.app^
@@ -8003,7 +8006,7 @@ dlsdk.appsflyer.com^
 ||usdiagnosis.icocofun.com^
 ||eats-ads-event-capture.coupang.com^
 ||trackchecker.ru/stat/
-||googletagmanager.com^$app=app.shinagawa.listentonovels.androidApp
+||googletagmanager.com^$app=app.shinagawa.listentonovels.androidApp|com.edadeal.android
 ||mon*-misc.fqnovel.com^
 ||clientlog.perfectworldgames.com^
 ||log1.perfectworldgames.com^
@@ -8090,7 +8093,7 @@ d4?appid*type*
 ||103.41.167.237/v2/resolv?host=
 ||logs.nebulahoroscope.com^
 ||gateway.bingviz.microsoftapp.net^$app=com.microsoft.bing
-||app.adjust.com^$app=com.microsoft.bing|jp.gocro.smartnews.android|com.daily.health.tracker.monitor|com.glovo
+||app.adjust.com^$app=com.microsoft.bing|jp.gocro.smartnews.android|com.daily.health.tracker.monitor|com.glovo|com.edadeal.android
 ||sapphire.api.microsoftapp.net^$app=com.microsoft.bing
 ||browser.events.data.microsoft.com^$app=com.microsoft.bing
 ||mobile.events.data.microsoft.com^$app=com.microsoft.bing
@@ -9073,6 +9076,12 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||telemetry-web.api.playstation.com^$redirect=nooptext
+||smetrics.aem.playstation.com^$redirect=nooptext
+||ir.ebaystatic.com/cr/ebay-rum/
+||svcs.ebay.com/ufeservice/*/metrics
+||ir.ebaystatic.com/rs/c/9527tracking/
+||higgsfield.ai/_next/static/chunks/amplitude
 ||api.s.mindbox.ru/scripts/v*/tracker.js
 ||searchbooster.net/scripts/tracker/
 ||cdn.tokyo-city.ru/js/metrica.js
@@ -21785,6 +21794,7 @@ omni.soundestlink.com$image
 ||thesun.ie/track?
 ||thetimes.co.uk/track?
 ||thetruth.com/pd.js
+||thetruthaboutcars.com/api/slots
 ||thewindowsclub.com/wp-content/themes/genesis/lib/js/skip-links.min.js
 ||thisiswhyimbroke.com/api/user/gift-guide-thumbnail-homepage/tracking
 ||thisiswhyimbroke.com/api/user/tracking
@@ -24620,6 +24630,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||analytics.aweber.com^
 ||analytics.bestreviews.com^
 ||analytics.bitrix.info^
+||analytics.bomiv.com^
 ||analytics.carambo.la^
 ||analytics.carbaselive.com^
 ||analytics.chegg.com^
@@ -26981,6 +26992,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||track.91app.io^
 ||track.atgstores.com^$third-party
 ||track.bannedcelebs.com^
+||track.bomiv.com^
 ||track.btdmp.com^
 ||track.coherentpath.com^
 ||track.contently.com^
