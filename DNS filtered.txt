@@ -302,6 +302,9 @@ dlsdk.appsflyersdk.com^
 ||*conversions.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||logreport-global-dual.cool*cloud.com^
+||wslog-global-dual.cool*cloud.com^
+||weblogger-wss.cool*cloud.com^
 ||track-*.hungrypanda.co^
 ||trace-*.hungrypanda.co^
 ||collector-*.perimeterx.net^
