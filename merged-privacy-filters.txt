@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.07.3
+! Version: 26.01.08.1
 
 !! Merged rules
 
@@ -544,8 +544,6 @@ larocheposay.co.kr#%#//scriptlet('set-constant', 'wptg_tagscript.exec', 'noopFun
 @@||karte.io^$domain=online.ysroad.co.jp
 ! https://github.com/easylist/easylist/commit/13d5492249d57e090598a32aaa047524055f3059
 @@||cdn.kaizenplatform.net^$script,domain=navi.onamae.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/191356
-@@||walmart.com/px/*/captcha
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191342
 @@||biv.gazeta.pl/resources/emailLoginPage__front/$domain=oauth.gazeta.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191257
@@ -4793,6 +4791,10 @@ kizi.com#%#window.google_trackConversion = function() {};
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! Intent IQ
+$cookie=_iiq_fdata
+$cookie=_iiq_ab_map
+$cookie=_iiq_ip
 ! trkkn.com
 $cookie=universal_analytics_cid
 ! Galaksion
@@ -6512,8 +6514,6 @@ spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218234
 southpark.*,southparkstudios.*#%#//scriptlet('set-constant', 'vtg', 'emptyObj')
-! https://github.com/AdguardTeam/AdguardFilters/issues/217458
-onet.pl#%#//scriptlet('prevent-element-src-loading', 'script', 'lib.onet.pl/static/pixel/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216735
 coupang.com#%#//scriptlet('json-prune-xhr-response', 'tracking', 'feeds', 'n-api/recommend/feeds')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214045
@@ -7659,7 +7659,7 @@ _tracking.php?b=
 /aegis-sdk/*$script
 
 !
-! This section contains the list of the rules that block mobile analytics and spyware.
+! This section contains the list of the rules that block analytics and spyware in mobile apps.
 !
 ! Good: ||adeventtracker.spotify.com^
 ! Bad:  ||adeventtracker.spotify.com^ (if this is everywhere, should be in tracking_servers.txt)
@@ -7826,6 +7826,12 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||sensorsdata-datasink.stardust-tv.com^
+||event-api-cs.stardust-tv.com^
+||logreport-global-dual.cool*cloud.com^
+||wslog-global-dual.cool*cloud.com^
+||weblogger-wss.cool*cloud.com^
+||mebed.dm-event.net^
 ||clck.yandex.ru^$app=com.edadeal.android
 ||bstream.kzhi.tech^
 ||lklfwu-inapps.appsflyersdk.com^
@@ -8097,7 +8103,7 @@ d4?appid*type*
 ||103.41.167.237/v2/resolv?host=
 ||logs.nebulahoroscope.com^
 ||gateway.bingviz.microsoftapp.net^$app=com.microsoft.bing
-||app.adjust.com^$app=com.microsoft.bing|jp.gocro.smartnews.android|com.daily.health.tracker.monitor|com.glovo|com.edadeal.android
+||app.adjust.com^$app=com.microsoft.bing|jp.gocro.smartnews.android|com.daily.health.tracker.monitor|com.glovo|com.edadeal.android|com.dailymotion.dailymotion
 ||sapphire.api.microsoftapp.net^$app=com.microsoft.bing
 ||browser.events.data.microsoft.com^$app=com.microsoft.bing
 ||mobile.events.data.microsoft.com^$app=com.microsoft.bing
@@ -9358,7 +9364,6 @@ coloradoan.com#%#//scriptlet('set-local-storage-item', 'user_insights', '$remove
 ||drive2.ru/_api/special/*/view|
 ||teknolojituru.com/api/tracking
 ||cloudfront.net/ecmtr-*.js
-||lib.onet.pl/static/pixel/*.js$script,redirect=noopjs
 ||interest.co.nz/core/modules/statistics/statistics.php
 ||media.flaticon.com/dist/js/ads.*.js
 ||kio.ac/analytics/
@@ -12486,7 +12491,6 @@ techmaniachd.pl###sidebar-right-1 > #HTML6
 ||k-crm.jp/web.tracking.js
 ||smg.com/Etrack/
 ||cdn.gamedock.io/gamedock-web-tracker/
-||walmart.com/px/
 ||cyberpedia.su/count.php
 ||msgsndr.com/funnel/event
 ||con.arbeitsagentur.de/prod/matomo/
