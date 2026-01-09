@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.09.3
+! Version: 26.01.10.1
 
 !! Merged rules
 
@@ -31,6 +31,9 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222263
+!+ PLATFORM(windows, mac, android, cli)
+||awswaf.com/*/telemetry|$redirect=nooptext,domain=discipulusv2.amasystem.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221623
 @@||cdn.optimizely.com/datafiles/*.json$domain=wingstop.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222178
