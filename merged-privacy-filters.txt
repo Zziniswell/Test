@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.10.3
+! Version: 26.01.11.1
 
 !! Merged rules
 
@@ -25304,6 +25304,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||coveo.com/coveo.analytics.js/
 ||covery.ai/fp/$third-party
 ||covet.pics/beacons
+||cp.filext.com^
 ||cp.official-coupons.com^
 ||cp.official-deals.co.uk^
 ||cqloud.com/measurements/
@@ -25825,6 +25826,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||incapdns.net/monitor.js
 ||incomaker.com//tracking/
 ||ind.sh/view.php?$third-party
+||indigitall.com/v1/browser?
 ||indoleads.com/api/pixel-content/
 ||inetstatic.com/tracking/
 ||infinityid.condenastdigital.com^
