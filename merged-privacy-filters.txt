@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.12.2
+! Version: 26.01.12.3
 
 !! Merged rules
 
@@ -9097,6 +9097,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||eadaily.com/tools/calc_news_stat.php
 ||scriber.webflix.ai/beacon
 ||rawpixel.com/external/gtag.js
 moebelix.*#%#//scriptlet('set-local-storage-item', 'coveo_cid', '$remove$')
@@ -21901,6 +21902,7 @@ omni.soundestlink.com$image
 ||tracking.game8.co^
 ||tracking.hsn.com^
 ||tracking.peopleareeverything.com^
+||tracking.pixelz.com^
 ||tracking.rocketleague.com^
 ||tracking.shopstyle.co.uk^
 ||tracking.shopstyle.com^
@@ -25954,6 +25956,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||leadliaison.com/tracking_engine/
 ||leadpages.net/leadboxes/current/embed.js
 ||leadpages.net^*/tracking.js
+||leads.whatboxdigital.com^
 ||leadtracking.plumvoice.com^
 ||leadvision.dotmailer.co.uk^$third-party
 ||lederer.nl/incl/stats.js.php?
