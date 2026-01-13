@@ -161,6 +161,7 @@ vkcdnservice.appspot.com^
 |load.sst.
 ||thegreatesthits.
 |piwik.
+||logs.collector.*.cloud.solarwinds.com^
 ||agatha-log-service-*.a.run.app^
 ||me9ddf.moebelix.
 ||spa-tracker*.spapi.io^
