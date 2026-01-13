@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.13.1
+! Version: 26.01.13.2
 
 !! Merged rules
 
@@ -9106,6 +9106,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||openway.deepseeksvc.com/v*/write/rum
+||l.search.naver.com/n/responsive/*&no_qc=*&p=
 ||eadaily.com/tools/calc_news_stat.php
 ||scriber.webflix.ai/beacon
 ||rawpixel.com/external/gtag.js
@@ -15244,6 +15246,7 @@ vkcdnservice.appspot.com^
 ||mediate-ios-*.hyprmx.com^
 ||production-adserver-*.amazonaws.com^
 ||rtbimp-loadbalancer-*.amazonaws.com^
+||powa-ingest-prod-*.video-player.arcpublishing.com^
 ||collector-*.pxchk.net^
 ||matomo-demo-*.amazonaws.com^
 ||*-default-cn.rum.aliyuncs.com^
@@ -15301,6 +15304,7 @@ vkcdnservice.appspot.com^
 |load.sst.
 ||thegreatesthits.
 |piwik.
+||agatha-log-service-*.a.run.app^
 ||me9ddf.moebelix.
 ||spa-tracker*.spapi.io^
 ||tracking.cds.dmm.
@@ -15334,6 +15338,7 @@ prd.api.bleacherreport.com^
 ||acr-*-prd.samsungcloud.tv^
 .prod.pr.analytics.console.aws.a2z.com
 ||trck.*.prod-na.turntable.sonic.advertising.amazon.dev^
+||cza*.crazygames.com^
 ||analytics.ahrefs.
 ||servo-report.keepstreams.*^
 ||sgtm.fairmont.
@@ -15444,6 +15449,7 @@ dlsdk.appsflyersdk.com^
 ||*conversions.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||tracking.geo.*.amazonaws.com^
 ||logreport-global-dual.cool*cloud.com^
 ||wslog-global-dual.cool*cloud.com^
 ||weblogger-wss.cool*cloud.com^
