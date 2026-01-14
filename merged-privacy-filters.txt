@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.14.2
+! Version: 26.01.14.3
 
 !! Merged rules
 
@@ -4812,6 +4812,8 @@ kizi.com#%#window.google_trackConversion = function() {};
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! anyclip.com
+$cookie=ac_user_id
 ! Wikia
 $cookie=wikia_beacon_id
 ! Intent IQ
@@ -5658,6 +5660,12 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! usnews.com
+||usnews.com^$cookie=usn_visitor_id
+! kayak.com
+||kayak.com^$cookie=kmkid
+! momondo.com
+||momondo.com^$cookie=kmkid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220298
 ||agoda.com^$cookie=agoda.analytics
 ||agoda.com^$cookie=agoda.firstclicks
@@ -9117,6 +9125,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||marketplace.anyclip.com/v*/lre-events
+/log/client/messages$domain=momondo.com|kayak.com
+/s/vestigo/measure$domain=momondo.com|kayak.com
 ||ir.ebaystatic.com/*/s_1x2.gif
 gamespot.com#%#//scriptlet('set-local-storage-item', 'ppid', '$remove$')
 ||openway.deepseeksvc.com/v*/write/rum
@@ -21773,6 +21784,7 @@ omni.soundestlink.com$image
 ||t.deepnote.com^
 ||t.factorform.com^
 ||t.freelancer.com^
+||t.gazetteer.co^
 ||t.goodchop.com^
 ||t.indeed.com^
 ||t.ionos.com^
