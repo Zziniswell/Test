@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.14.1
+! Version: 26.01.14.2
 
 !! Merged rules
 
@@ -9117,6 +9117,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||ir.ebaystatic.com/*/s_1x2.gif
 gamespot.com#%#//scriptlet('set-local-storage-item', 'ppid', '$remove$')
 ||openway.deepseeksvc.com/v*/write/rum
 ||l.search.naver.com/n/responsive/*&no_qc=*&p=
@@ -15315,6 +15316,7 @@ vkcdnservice.appspot.com^
 |load.sst.
 ||thegreatesthits.
 |piwik.
+||logs.collector.*.cloud.solarwinds.com^
 ||agatha-log-service-*.a.run.app^
 ||me9ddf.moebelix.
 ||spa-tracker*.spapi.io^
@@ -19062,6 +19064,7 @@ analytics-*.aasaam.com
 /statscounter/*
 /statscript.js
 /statsd_proxy
+/statsig-proxy/*
 /StatSNA.js
 /StatsPage.php
 /StatsPixel?
@@ -20585,6 +20588,7 @@ omni.soundestlink.com$image
 ||csp.godaddy.com^
 ||cstats.sankakucomplex.com^
 ||cultofmac.com/djrxqhzkbsgf.js
+||cursor.com/analytics/
 ||cvs.com/tnadstlinj.js
 ||cwt.citywire.info^
 ||cxgpt1.goindigo.in/forward/v2/track
@@ -22408,6 +22412,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||cpxl.golem.de^
 ||d.rp-online.de^
 ||dasoertliche.de/js/liwAnalytics.js
+||data.manga-passion.de^
 ||data.openerotik.com^
 ||data.sportdeutschland.tv^
 ||dd.betano.com^
@@ -25275,6 +25280,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||compendiumblog.com/sp.js
 ||competitoor.com/analytics/
 ||conan.screencast-o-matic.com^
+||conceptualhq.com/api/v1/track?
 ||concert.io/lookup/
 ||conde.io/beacon
 ||condenastdigital.com/content?$third-party
@@ -27897,6 +27903,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||retrack.q-divisioncdn.de^
 ||retresco.de^*/stats/$third-party
 ||rum.mauve.eu^
+||scdn.literatur-couch.de^
 ||script.idgentertainment.de/gt.js
 ||serverkompetenz.net/cpx.php?
 ||sheego.de/ar/$third-party
