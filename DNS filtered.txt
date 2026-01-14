@@ -307,6 +307,7 @@ dlsdk.appsflyersdk.com^
 ||*conversions.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||gbxreport-*.wf.com^
 ||tracking.geo.*.amazonaws.com^
 ||logreport-global-dual.cool*cloud.com^
 ||wslog-global-dual.cool*cloud.com^
