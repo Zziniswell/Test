@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.15.3
+! Version: 26.01.16.1
 
 !! Merged rules
 
@@ -6996,6 +6996,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/js/exponea.min.js
 /js/pixel.js|
 /apps/ssw/events-collector-lambda/events/*
 /sfp/universal_analytics.min.
@@ -7857,6 +7858,7 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||app.siteperformancetest.net^
 ||events-stream-svc.cordial.io^
 ||events.gonative.io^
 ||matomo.podslink.net^
@@ -9130,6 +9132,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||app.birdsend.co/forms/*/display-stats-pixel
 ||marketplace.anyclip.com/v*/lre-events
 /log/client/messages$domain=momondo.com|kayak.com
 /s/vestigo/measure$domain=momondo.com|kayak.com
@@ -10199,7 +10202,6 @@ hindustantimes.com#%#//scriptlet('set-local-storage-item', 'ht_cdp', '$remove$')
 ||asadcdn.com/flairfire/
 wowhead.com#%#//scriptlet('set-local-storage-item', 'zafusr', '$remove$')
 wowhead.com#%#//scriptlet('set-session-storage-item', 'zafusr', '$remove$')
-||api.*.exponea.com^$domain=bogsfootwear.com|urbanstems.com
 ||slack.com/clog/track/
 ||vault.gostatera.com/collect/rap
 ||sooplive.co.kr/js/google.analytics.js
@@ -10367,7 +10369,6 @@ themirror.com##reach-topbox
 ||apm.infoldgames.com/v1/log/sendtlog
 ||payments.google.com/gp/w/*/PaymentsPortals/web-reports?
 ||payments.google.com/payments/jslogs?
-||api-bloomreach.comfy.ua/js/exponea.min.js
 ||titanprod.narvar.com/*/track|
 ||adultswim-vodlive.cdn.turner.com/csm/analytics
 ||homemate.co.jp/common/js/beacon/real_estate_detail.js
@@ -14499,6 +14500,11 @@ mail.ferret-one.com%2Fbeacon$image
 !
 ! NOTE: Specific rules
 !
+! healio.com
+healio.com/medialibrary/pixel.png?tp=
+healio.com%2Fmedialibrary%2Fpixel.png%3Ftp%3D
+e.healio.com/*.php?ID=$image
+e.healio.com%2F*.php%3FID%3D$image
 ! it-recht-kanzlei.de
 it-recht-kanzlei.de/logo/Copyright-Logo.png?i=
 it-recht-kanzlei.de%2Flogo%2FCopyright-Logo.png%3Fi%3D
@@ -19598,6 +19604,7 @@ analytics-*.aasaam.com
 /WRb.js^
 /wreport.js
 /writelog.js
+/ws-tracking.js
 /wstat.pl
 /wstats.php?
 /wt_capi.js
@@ -25498,6 +25505,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||edge-hls.doppiocdn.com/ping
 ||edge-hls.doppiocdn.live/ping
 ||edge-hls.doppiocdn.net/ping
+||edge.adobedc.net/ee/v1/collect?
 ||edge.bredg.com^$third-party
 ||edrone.me/trace?
 ||edw.edmunds.com/edw/edw1x1.gif
@@ -25970,7 +25978,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||k.streamrail.com^
 ||k5a.io/?i=
 ||kalstats.kaltura.com^
-||kameleoon.io/visit/events?
+||kameleoon.io/visit/
 ||kbb.com/partner/$third-party
 ||kelkoogroup.net/st?
 ||kimonix.com/analytics/
