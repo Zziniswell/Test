@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.16.2
+! Version: 26.01.16.3
 
 !! Merged rules
 
@@ -31,6 +31,10 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222570
+@@||cdn.cxense.com/cx.cce.js$domain=elle.com
+@@||cdn.cxense.com/cx.js$domain=elle.com
+@@||api.cxense.com/public/widget/data?json=$domain=elle.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222154
 !+ NOT_PLATFORM(windows, mac, android, cli)
 @@||live.mrf.io/statics/marfeel/gardac-sync.js$domain=muylinux.com
@@ -7858,6 +7862,9 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||clarity.ms^|
+||engagelab.cc^
+||global-sis.engagelab.com^
 ||app.siteperformancetest.net^
 ||events-stream-svc.cordial.io^
 ||events.gonative.io^
@@ -9132,6 +9139,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||question.searchiq.co/static/js/analytics.js
 ||app.birdsend.co/forms/*/display-stats-pixel
 ||marketplace.anyclip.com/v*/lre-events
 /log/client/messages$domain=momondo.com|kayak.com
@@ -17170,7 +17178,6 @@ analytics-*.aasaam.com
 /api/pageview/*$ping
 /api/pageview?
 /api/pagevisits
-/api/ping?$~xmlhttprequest
 /api/pixel?
 /api/reqAnalytic/*
 /api/stat?
@@ -20753,6 +20760,7 @@ omni.soundestlink.com$image
 ||essentiallysports.com/growth/engagement/
 ||et.nytimes.com^
 ||et.tidal.com^
+||eta.animenewsnetwork.com^
 ||etracker.noon.com^
 ||etsy.com/bcn/beacon
 ||etsy.com/clientlog
@@ -22399,6 +22407,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||aerzteblatt.de/inc/js/ga4.js
 ||agnes.waz.de^
 ||analytics.adliners.de^
+||analytics.animexx.de^
 ||analytics.daasrv.net^
 ||analytics.deutscher-apotheker-verlag.de^
 ||analytics.moviepilot.de^
