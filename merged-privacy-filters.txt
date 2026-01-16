@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.16.3
+! Version: 26.01.17.1
 
 !! Merged rules
 
@@ -31,6 +31,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222648
+@@||mi.tigo.com.co/plugins/cordova-plugin-fingerprint-aio/www/Fingerprint.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222570
 @@||cdn.cxense.com/cx.cce.js$domain=elle.com
 @@||cdn.cxense.com/cx.js$domain=elle.com
@@ -7862,6 +7864,11 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||ir-sdk.guardease.com^
+||verifysession.uxcam.com^
+||analytics.wachanga.app^
+||usage.digitalconcerthall.com^
+||report.starshort.online^
 ||clarity.ms^|
 ||engagelab.cc^
 ||global-sis.engagelab.com^
@@ -8156,7 +8163,7 @@ d4?appid*type*
 ||103.41.167.237/v2/resolv?host=
 ||logs.nebulahoroscope.com^
 ||gateway.bingviz.microsoftapp.net^$app=com.microsoft.bing
-||app.adjust.com^$app=com.microsoft.bing|jp.gocro.smartnews.android|com.daily.health.tracker.monitor|com.glovo|com.edadeal.android|com.dailymotion.dailymotion
+||app.adjust.com^$app=com.microsoft.bing|jp.gocro.smartnews.android|com.daily.health.tracker.monitor|com.glovo|com.edadeal.android|com.dailymotion.dailymotion|com.novoda.dch|com.jotform.v2
 ||sapphire.api.microsoftapp.net^$app=com.microsoft.bing
 ||browser.events.data.microsoft.com^$app=com.microsoft.bing
 ||mobile.events.data.microsoft.com^$app=com.microsoft.bing
@@ -9139,6 +9146,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||cdn1.adoberesources.net/alloy/$domain=pluto.tv
+||autotrader.com/pixall/
+||partner.awscconsumerinfo.autotrader.com/*/beacon/
 ||question.searchiq.co/static/js/analytics.js
 ||app.birdsend.co/forms/*/display-stats-pixel
 ||marketplace.anyclip.com/v*/lre-events
@@ -22398,6 +22408,8 @@ omni.soundestlink.com$image
 ! CSP Mining
 $csp=child-src 'none'; frame-src 'self' *; worker-src 'none',domain=fileone.tv|theappguruz.com
 $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vidoza.net
+! Other resource abuse
+||gyrovague.com^$domain=archive.is|archive.ph|archive.today
 
 ! German
 ||1438976156.recolution.de^
@@ -26408,6 +26420,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||paypal.com/xoplatform/logger/api/logger
 ||paypal.com^*/pixel.gif$third-party
 ||paypalobjects.com^*/pixel.gif
+||pbd.yahoo.com/data/analytics
 ||pbjs-stream.bydata.com^
 ||pc161021.com/scripts/noui/eventlogger.js
 ||pc161021.com/scripts/noui/StatProvider.js
