@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.17.1
+! Version: 26.01.17.2
 
 !! Merged rules
 
@@ -7716,6 +7716,7 @@ _tracking.php?b=
 /.*/$network,app=com.adups.fota.sysoper|com.adups.fota
 !
 ! For specific apps
+||tracking.ibotta-classic.ipn-ops.net^$app=com.ibotta.android
 ||firebaselogging-pa.googleapis.com^$app=com.sampleapp
 ||ads-api.twitter.com^$app=com.twitter.android
 ||tags.tiqcdn.com^$app=uk.co.thetimes|com.hulu.plus|com.booking
@@ -15502,6 +15503,7 @@ dlsdk.appsflyersdk.com^
 ||*conversions.appsflyersdk.com^
 ||*register.appsflyersdk.com^
 dlsdk.appsflyer.com^
+||clarity.ms^|
 ||gbxreport-*.wf.com^
 ||tracking.geo.*.amazonaws.com^
 ||logreport-global-dual.cool*cloud.com^
