@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.18.2
+! Version: 26.01.18.3
 
 !! Merged rules
 
@@ -16605,6 +16605,7 @@ analytics-*.aasaam.com
 @@||cmn.gyro-n.com/js/gyr.min.js$domain=benesse-style-care.co.jp
 @@||cpt.geniee.jp/hb/*/wrapper.min.js$domain=hoyme.jp
 @@||cybozu.com/*/event.gif?$~third-party
+@@||dan-ball.jp/en/javagame/mine/data/d.gif$image,~third-party
 @@||datadoghq-browser-agent.com/*/datadog-logs.js$domain=crosset.onward.co.jp
 @@||delivery.satr.jp^$script,domain=mieru-ca.com
 @@||deteql.net/recommend/provision?$xmlhttprequest,domain=t-fashion.jp
@@ -22213,7 +22214,7 @@ omni.soundestlink.com$image
 ! akamaihd.net
 ||akamaihd.net^$image,domain=globalnews.ca|nycgo.com|stcatharinesstandard.ca
 ! Non-legit domains
-||edge-client^$script,domain=barrons.com
+://edge-client/$domain=barrons.com
 ! Plausible selfhosted
 ||jeremiahlee.com/fanboynz.js
 ! confection.io
