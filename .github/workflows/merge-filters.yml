@@ -120,8 +120,6 @@ jobs:
           echo "##body" >> final_result.txt
           echo "*#%#//scriptlet('prevent-canvas')" >> final_result.txt
           echo "" >> final_result.txt
-          echo "!#if adguard" >> final_result.txt
-          echo "" >> final_result.txt
 
           download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_allowlist.txt" "ep_allowlist"
           download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_allowlist_international.txt" "ep_intl"
@@ -133,7 +131,6 @@ jobs:
           download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty.txt" "ep_thirdparty"
           download_filter "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty_international.txt" "ep_thirdparty_intl"
           
-          echo "!#endif" >> final_result.txt
           
           echo "=========================================="
           echo "All downloads completed successfully!"
