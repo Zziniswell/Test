@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.20.2
+! Version: 26.01.20.3
 
 !! Merged rules
 
@@ -9151,6 +9151,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||olympics.com/ddna-event-router/
+||cycling74.com/web/matomo/
 ||segment.psg.nexstardigital.net/adobeanalytics.js
 ||aproapi.benchmarkemail.com/api/v1/trackers/
 ||ff.netmonet.co/api/frontend/client/metrics
@@ -21977,6 +21979,7 @@ omni.soundestlink.com$image
 ||trumba.com/et.aspx?
 ||trustradius.com/api/v1/pageview
 ||trustradius.com/api/v2/collectMetrics
+||trusty-shovel-1234.paul-f22.workers.dev^$domain=sfist.com
 ||truthsocial.com/instance/innovid.js
 ||trx3.famousfix.com^
 ||try.elevenlabs.io/pr/js
@@ -25633,6 +25636,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||fbsbx.com/paid_ads_pixel/
 ||fcmatch.google.com^
 ||fcmatch.youtube.com^
+||fd.cleantalk.org^
 ||feed.informer.com/fdstats
 ||feedblitz.com/imp?$third-party
 ||feedblitz.com^*.gif?$third-party
@@ -27089,6 +27093,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||track-dark-bz.b-cdn.net^
 ||track.360playvid.info^
 ||track.91app.io^
+||track.aimroas.com^
 ||track.atgstores.com^$third-party
 ||track.bannedcelebs.com^
 ||track.bomiv.com^
