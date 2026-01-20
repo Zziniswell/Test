@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.20.1
+! Version: 26.01.20.2
 
 !! Merged rules
 
@@ -5672,11 +5672,6 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
-! netmonet.co
-||netmonet.co^$removeparam=id
-||netmonet.co^$removeparam=wpid
-||netmonet.co^$removeparam=visitId
-||netmonet.co^$removeparam=operation
 ! usnews.com
 ||usnews.com^$cookie=usn_visitor_id
 ! kayak.com
@@ -9156,6 +9151,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||segment.psg.nexstardigital.net/adobeanalytics.js
 ||aproapi.benchmarkemail.com/api/v1/trackers/
 ||ff.netmonet.co/api/frontend/client/metrics
 ||ee.wovn.io/report_values/
@@ -20479,6 +20475,7 @@ omni.soundestlink.com$image
 ||cdapi.collegedunia.com^
 ||cdn.gov.cfigroup.com/webmon/s/source/webmon/$domain=weather.gov
 ||cdn.jsdelivr.net/npm/@adshield/
+||cdp.vercel.com/rs/
 ||centerblog.net/stats.js
 ||cgtn.com/api/collect/
 ||ch3ngl0rd.com/hit/
@@ -25273,6 +25270,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||collect.rewardstyle.com^
 ||collect.usefathom.com^
 ||collect.verify.lnearn.com^
+||collectfront.nector.io^
 ||collection.e-satisfaction.com^
 ||collector-*.luigisbox.com^
 ||collector-1.ex.co^
@@ -26518,6 +26516,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||ps.ex.co/cookie_sync
 ||pswec.com/px/$third-party
 ||pt.crossmediaservices.com^
+||pt.dwcdn.net^
 ||pt.ispot.tv^
 ||ptsc.shoplocal.com^
 ||pub.pixels.ai/metrics-lib.js
@@ -26648,6 +26647,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||rum.perfops.net^
 ||rum.uptime.com^
 ||rumstat.cdnvideo.ru^
+||run.app/api/pixel-event
 ||run.app/data.log
 ||run.app/events-receiver/get-web-event
 ||run.app/metrics/
@@ -26730,6 +26730,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||sharethis.com/increment_clicks?
 ||sharethis.com/pageviews?
 ||shop.app/pay/hop?analytics_trace_id=
+||shopflo.com/api/v1/spark
 ||shopify-gtm-suite.getelevar.com/getelevar/*/dl-web-pixel-lax-custom.js
 ||shopify-webhooks.sailthru.com^
 ||shopify.com/shopifycloud/consent-tracking-api/
