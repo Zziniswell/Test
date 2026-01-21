@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.21.3
+! Version: 26.01.22.1
 
 !! Merged rules
 
@@ -7010,6 +7010,9 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/statistics/md.gif?
+/sp-2.0.0-dm-0.1.min.js
+/i?e=pv&page=
 /js/exponea.min.js
 /js/pixel.js|
 /apps/ssw/events-collector-lambda/events/*
@@ -7873,6 +7876,15 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||log.clearcleanerpro.live^
+||client-telemetry-preauth.hingeprod.net^
+||event-log-api-data-platform-data-lake-prod.gryphline.com^
+||event-log-api-ipv6.gryphline.com^
+||eventlog.gryphline.com^
+||native-log-collect.gryphline.com^
+||data-p.gryphline.com^
+||fp-sa-it.fengkongcloud.com^
+||api-fp-retry-sa.fengkongcloud.com^
 ||ir-sdk.guardease.com^
 ||verifysession.uxcam.com^
 ||analytics.wachanga.app^
@@ -8941,6 +8953,7 @@ d4?appid*type*
 ||wlog.ksapisrv.com^
 !
 ! TikTok
+||log-va.tiktokv.com^
 ||mcs.*.tiktok.com^
 ||mcs.tiktokw.us^
 ||mcs.*.tiktokv.com^
@@ -9155,6 +9168,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||api.pagepulse.info/webanalytics/
 ||ridgemerino.com/api/collect
 ||static.klaviyo.com/onsite/js/event_adapter.
 ridgemerino.com#%#//scriptlet('set-local-storage-item', 'kl-uid', '$remove$')
@@ -17175,6 +17189,7 @@ analytics-*.aasaam.com
 /api/v1/streamtelemetry
 /api/v2/collector
 /api/v3/getPageVisits
+/api/v3/getStatsigResults
 /api/v3/trackSegmentEvent
 /api/video/stats/*$xmlhttprequest
 /api_adlog.php?
@@ -20561,6 +20576,7 @@ omni.soundestlink.com$image
 ||collector.quillbot.com^
 ||collector.spankbang.party^
 ||collector.taoxh.life^
+||collector.theconversation.com^
 ||collector.xhaccess.com^
 ||collector.xhamster.com^
 ||collector.xhamster.desi^
@@ -20687,6 +20703,7 @@ omni.soundestlink.com$image
 ||dropbox.com/prompt/log_impression?
 ||dropbox.com/unity_connection_log
 ||drudgereport.com/204.png
+||drugs.com/api/log/
 ||drugs.com/api/logger/
 ||drugs.com/img/pixel.gif
 ||dtag.breadfinancial.com^
@@ -21329,6 +21346,7 @@ omni.soundestlink.com$image
 ||nordstrom.com/api/cupcake/
 ||norton.com/service/norton/head?
 ||notion.so/api/v*/teV1
+||notion.so/api/v3/etClient
 ||novanthealth.org/v1/tagular/beam
 ||novelcool.com/files/js/yh_tj.js
 ||npa.thetimes.com/stats
@@ -24623,6 +24641,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||adnz.co/dmp/publisher.js
 ||adnz.co/header.js
 ||adobedc.net/collector/
+||adora-cdn.com/adora-start.js
 ||ads-tracking.beop.io^
 ||ads-tracking.collectiveaudience.co^
 ||ads-trk.vidible.tv^
@@ -25723,6 +25742,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||gateway.foresee.com^
 ||gateway.src-play.com/Analytics/
 ||gcion.com/gcion.ashx?
+||gcp.fasthorse.workers.dev^
 ||gecko.space/count.js
 ||geckofoot.com/gfcounterimg.aspx?
 ||geckofoot.com/gfvisitormap.aspx?
