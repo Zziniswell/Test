@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.21.2
+! Version: 26.01.21.3
 
 !! Merged rules
 
@@ -31,6 +31,12 @@
 !
 !
 !
+! metro online shop - no search results
+@@||cdn.optimizely.com/datafiles/$domain=metro.at|metro.bg|metro-cc.hr|metro.fr|metro.it|metro-kz.com|metro.md|metro.pk|metro.ro|metro.rs|metro.sk|makro.es|metro-tr.com|metro.ua|makro.pt|metro.de
+! https://github.com/AdguardTeam/AdguardFilters/issues/222795
+@@||static.airbridge.io/sdk/latest/$domain=airbridge.io
+! https://github.com/AdguardTeam/AdguardFilters/issues/223185
+@@||samsclub.com/px/*/captcha/captcha.js$domain=samsclub.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223071
 @@||googletagmanager.com/gtm.js$domain=uzdevumi.lv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222648
@@ -9149,6 +9155,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||ridgemerino.com/api/collect
+||static.klaviyo.com/onsite/js/event_adapter.
+ridgemerino.com#%#//scriptlet('set-local-storage-item', 'kl-uid', '$remove$')
 fashiontechnews.zozo.com##div[class^="style-module--contentAreaInne"] > div[class^="style-module--bottomContainer--"]:has(> div[class^="style-module--footer"] > div[class^="style-module--reactions"])
 ||olympics.com/ddna-event-router/
 ||cycling74.com/web/matomo/
@@ -15950,7 +15959,6 @@ analytics-*.aasaam.com
 @@||cdn.matomo.cloud/tekuchi.matomo.cloud/matomo.js$domain=berkeleygroup.digital
 @@||cdn.mxpnl.com/libs/$script,domain=get.pumpkin.care
 @@||cdn.perfops.net/rom3/rom3.min.js$domain=cdnperf.com
-@@||cdn.rawgit.com/dmauro/keypress/master/keypress.js$script,domain=dmauro.github.io
 @@||cdn.segment.com/analytics-next/
 @@||cdn.segment.com/analytics.js/$script,domain=abstractapi.com|accounts-bc.com|app.cryptotrader.tax|app.joinhandshake.com|driversed.com|fender.com|finerdesk.com|foxbusiness.com|foxnews.com|givingassistant.org|inxeption.io|reuters.com|squaretrade.com|swatches.interiordefine.com
 @@||cdn.segment.com/next-integrations/integrations/
@@ -18126,7 +18134,7 @@ analytics-*.aasaam.com
 /keen-tracking.min.js
 /keen.min.js
 /KenticoActivityLogger/Logger.js
-/keypress.js$script
+/keypress.js$script,domain=~github.io
 /keywee.js
 /kimonix_analytics.js
 /kissmetrics.js
@@ -28767,6 +28775,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||all-top.ru/cgi-bin/topcount.cgi?
 ||anycent.com/analytics/
 ||api.vp.rambler.ru/events/
+||api2.ma.ru/analytics.js
 ||awaps.yandex.ru^
 ||banstat.nadavi.net^
 ||bigday.ru/counter.php?
