@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.23.3
+! Version: 26.01.24.1
 
 !! Merged rules
 
@@ -31,6 +31,10 @@
 !
 !
 !
+! https://shoof.alkass.net/live?ch=six
+@@||src.litix.io/*/bitmovin-mux.js$domain=shoof.alkass.net
+! https://github.com/AdguardTeam/AdguardFilters/issues/223313
+@@||lptag.liveperson.net^$domain=yesstyle.com
 ! metro online shop - no search results
 @@||cdn.optimizely.com/datafiles/$domain=metro.at|metro.bg|metro-cc.hr|metro.fr|metro.it|metro-kz.com|metro.md|metro.pk|metro.ro|metro.rs|metro.sk|makro.es|metro-tr.com|metro.ua|makro.pt|metro.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222795
@@ -9168,6 +9172,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||cjdropshipping.com/common-public/fingerprintjs
 ||api.pagepulse.info/webanalytics/
 ||ridgemerino.com/api/collect
 ||static.klaviyo.com/onsite/js/event_adapter.
@@ -16745,6 +16750,10 @@ analytics-*.aasaam.com
 @@||sibs.com/fingerprint/sfp2/fp2.min.js$script,domain=net24.bancomontepio.pt
 @@||siteapps.com^$script,domain=netcombo.com.br
 @@||tags.t.tailtarget.com/t3m.js?$domain=superesportes.com.br
+!
+!---------- Qatar ----------
+!
+@@||src.litix.io/*/bitmovin-mux.js$domain=shoof.alkass.net
 !
 !---------- Romanian ----------
 !
@@ -31584,6 +31593,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||ml-attr.com^$third-party
 ||mlclick.com^$third-party
 ||mlno6.com^$third-party
+||mlytics.com^$third-party
 ||mm7.net^$third-party
 ||mmccint.com^$third-party
 ||mno.link^$third-party
