@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.24.1
+! Version: 26.01.24.2
 
 !! Merged rules
 
@@ -15397,6 +15397,7 @@ vkcdnservice.appspot.com^
 |load.sst.
 ||thegreatesthits.
 |piwik.
+||log-v*-boot.capcutapi.com^
 ||logs.collector.*.cloud.solarwinds.com^
 ||agatha-log-service-*.a.run.app^
 ||me9ddf.moebelix.
@@ -20683,6 +20684,8 @@ omni.soundestlink.com$image
 ||diabrowser.com/js/arcnet-script.js
 ||digital.flytedesk.com/js/head.js
 ||discover-metrics.cloud.seek.com.au^
+||discover.hubpages.com/.bootscripts/analytics.min.js
+||discover.hubpages.com/.bootscripts/hubPagesViewDurationTracker.min.js
 ||dls-account.di.atlas.samsung.com^
 ||dmtgvn.com/wrapper/js/common-engine.js$domain=rt.com
 ||docs.github.com/events
@@ -20733,6 +20736,7 @@ omni.soundestlink.com$image
 ||ebaystatic.com/cr/v/c01/ubt241024192c097b9ddc0a81e0a.js
 ||ebaystatic.com^*tracking/configuration.js
 ||ec.thredup.com^
+||eddl.cdi.services.sap.com^
 ||edge.staging.fullstory.com^
 ||edisound.com/api/p/stats
 ||eec.crunchyroll.com^
@@ -21338,6 +21342,7 @@ omni.soundestlink.com$image
 ||nextdoor.*/ajax/ping_ndas/
 ||nextdoor.com/events/
 ||nflshop.com/api/track
+||ngds.sap.com^
 ||nid.mansionglobal.com^
 ||nid.thesun.co.uk^
 ||nid.thetimes.com^
@@ -24164,6 +24169,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||agrointel.ro/ga.js
 ||agrointel.ro/track.js
 ||analytics.okazii.ro^
+||tracking-api.bookzone.ro^
 ||views.b1tv.ro^
 ||views.romaniatv.net^
 ! Russian
@@ -25047,6 +25053,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||beacon.errorception.com^
 ||beacon.flow.io^
 ||beacon.klm.com^
+||beacon.peakhour.io^
 ||beacon.riskified.com^
 ||beacon.s.llnwi.net^
 ||beacon.searchspring.io^
@@ -25146,6 +25153,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||cbsaavideo.com/measurements/
 ||cbsivideo.com/measurements/
 ||cc.swiftype.com^
+||cca-lite.coinbase.com/amp
 ||cca-lite.coinbase.com/metrics
 ||ccexperimentsstatic.oracleoutsourcing.com^
 ||cdn-channels-pixel.ex.co^
@@ -25168,6 +25176,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||cdn.statically.io/gh/opcdn/analytics/main/script.js
 ||cdn.super.com/remote-event-registry.json
 ||cdn.tolt.io/tolt.js
+||cdn.transifex.com/live.js
 ||cdn.usefathom.com^
 ||cdn.zg-api.com^*/analytics.js
 ||cdnjs.work/metrics.js
@@ -25559,6 +25568,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||errors.snackly.co^
 ||essential-apps-analytics.herokuapp.com^
 ||et.educationdynamics.com^
+||eth.llamarpc.com^
 ||etl.springbot.com^
 ||etoro.com/tradesmonitor/
 ||eu-mobile.events.data.microsoft.com^
@@ -26233,6 +26243,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||mkcms.com/stats.js
 ||ml.com/enterprisetagging/
 ||mlweb.dmlab.hu^
+||mm-sdk-analytics.api.cx.metamask.io^
 ||mmcdn.com/events/
 ||mmi.bemobile.ua^
 ||mochiads.com/clk/
@@ -26446,8 +26457,8 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||perimeterx.net/api/v1/collector/
 ||perr.h-cdn.com^
 ||perso.aws.arc.pub^
-||petametrics.com^$domain=meidastouch.com
-||petametrics.com^$image,third-party,xmlhttprequest
+||petametrics.com/*/activity
+||petametrics.com/*/modal
 ||pets.channeladvisor.com^
 ||photobox.com/event
 ||photobox.com/logs
@@ -31812,7 +31823,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||perljs.com^$third-party
 ||permutive.com^$third-party
 ||personyze.com^$third-party
-||petametrics.com^$third-party,domain=~telegraph.co.uk
+||petametrics.com^$third-party,domain=~telegraph.co.uk|~thestreet.com
 ||pghub.io^$third-party
 ||pgs.io^$third-party,domain=~publicgood.com
 ||phonalytics.com^$third-party
