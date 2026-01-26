@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.26.3
+! Version: 26.01.27.1
 
 !! Merged rules
 
@@ -7880,6 +7880,7 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||log.weathertrip.net^
 ||log.clearcleanerpro.live^
 ||client-telemetry-preauth.hingeprod.net^
 ||event-log-api-data-platform-data-lake-prod.gryphline.com^
@@ -9172,6 +9173,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||img.eduwill.net/resources/tracking/live/globalMainTracking.js
+||img.eduwill.net/eduwill/live/js/common/forMatomo.js
 ||app.s.id/api/sda/tr
 ||european-alternatives.eu/api/event
 ||cjdropshipping.com/common-public/fingerprintjs
@@ -11967,7 +11970,7 @@ park.ajinomoto.co.jp##.bottomMenu
 ||web-g-p.com/info/js/cookie.js
 ||web-g-p.com/info/log/
 ||web-g-p.com/info/log_total.cgi
-||adguard.com/-/event/
+||adguard*/-/event/
 ||squid.gazeta.pl/bdtrck/
 ||d1q7pknmpq2wkm.cloudfront.net/js/my.fanplayr.com/
 ||bridge-ashiato.appspot.com/beacon/
@@ -14509,9 +14512,6 @@ gmarket.co.kr#%#//scriptlet('fingerprintjs2')
 ! In extortion spam
 %2Famsweb.php%3F
 /amsweb.php?$image
-! https://github.com/easylist/easylist/issues/22377
-mail.ferret-one.com/beacon$image
-mail.ferret-one.com%2Fbeacon$image
 ! mailerlite.com
 /tf/o/*$image
 %2Ftf%2Fo%2F$image
@@ -14559,6 +14559,9 @@ mail.ferret-one.com%2Fbeacon$image
 !
 ! NOTE: Specific rules
 !
+! https://github.com/easylist/easylist/issues/22377
+mail.ferret-one.com/beacon$image
+mail.ferret-one.com%2Fbeacon$image
 ! healio.com
 healio.com/medialibrary/pixel.png?tp=
 healio.com%2Fmedialibrary%2Fpixel.png%3Ftp%3D
@@ -23395,8 +23398,6 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||msgsndr.com/funnel/event
 ||mtrace.qq.com^
 ||music.163.com/device/signature/create/deviceid.js
-||music.163.com/weapi/feedback/weblog
-||music.163.com/weapi/pl/count
 ||netstat.yunnan.cn^
 ||nex.163.com^
 ||nmc.cn/static/nmclog/nmclog.js
