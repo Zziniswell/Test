@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.28.2
+! Version: 26.01.28.3
 
 !! Merged rules
 
@@ -9173,6 +9173,11 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||adsimg.vevorstatic.com/upload/vevor/custom/vcr/*/vcr.js
+||adsimg.vevor.com/upload/ga/*.js
+octobrowser.net#%#//scriptlet('set-local-storage-item', 'oc_uuid', '$remove$')
+||octobrowser.net/hs/scriptloader/
+||js.zol.com.cn/pvn/z.pv
 ||img.eduwill.net/resources/tracking/live/globalMainTracking.js
 ||img.eduwill.net/eduwill/live/js/common/forMatomo.js
 ||app.s.id/api/sda/tr
@@ -16895,7 +16900,6 @@ analytics-*.aasaam.com
 .net/l.gif?
 .no/app/aas/a
 .outbound-links.file-downloads.js
-.outbound-links.pageview-props.revenue.tagged-events.js
 .outbound-links.tagged-events.js
 .pageview-props.js
 .pageview-props.tagged-events.js
@@ -16909,11 +16913,13 @@ analytics-*.aasaam.com
 .php?ping=
 .php?stats=
 .php?tracking=
+.revenue.tagged-events.js
 .sharecounter.$third-party
 .skimlinks.js
 .stats?action=
 .svc/?tracking_id=
 .tagged-events.outbound-links.js
+.tagged-events.revenue.js
 .v4.analytics.
 /.webscale/rum?
 /.well-known/shopify/monorail
@@ -17927,6 +17933,7 @@ analytics-*.aasaam.com
 /getintent.js
 /getlog.gif
 /getstats.js.php
+/ghost-stats.min.js
 /gigyaGAIntegration.js
 /gingeranalytics.min.js
 /GlanceCobrowseLoader_
@@ -18647,9 +18654,11 @@ analytics-*.aasaam.com
 /pixelyoursite/dist/scripts/public.js
 /pixy.gif?
 /planetstat.php
+/plausible.file-downloads.js
 /plausible.js$domain=~plausible.io
 /plausible.manual.js
 /plausible.outbound-links.js$domain=~plausible.io
+/plausible.tagged-events.js
 /player-test-impression?
 /player/stats.php?
 /plg_convertformstools_gatracker/js/script.js
@@ -18673,6 +18682,7 @@ analytics-*.aasaam.com
 /plugins/wordfence/visitor.php?
 /plugins/wp-vgwort/*
 /pmc-cxense.js
+/pmfastclick.min.js
 /pointeur.gif?
 /pomegranate.js
 /pongAudienceLS?
@@ -20332,6 +20342,7 @@ omni.soundestlink.com$image
 ||analytics.designspiration.com^
 ||analytics.egdata.app^
 ||analytics.eip.telegraph.co.uk^
+||analytics.eternagame.org^
 ||analytics.faceitanalytics.com^
 ||analytics.footballdb.com^
 ||analytics.freemake.com^
@@ -20915,6 +20926,7 @@ omni.soundestlink.com$image
 ||fresnel-events.vimeocdn.com^
 ||fsho.st/tracker.js
 ||ft.com/ingest?
+||fuel-design.com/js/script.js
 ||fullscreen.nz/v1/tracking/$domain=threenow.co.nz
 ||fusevideo.io/api/event
 ||futureparty.com/nectar_analytics
@@ -21404,6 +21416,7 @@ omni.soundestlink.com$image
 ||okx.com/jsstat/sb?
 ||oneroof.co.nz/*/record-log/
 ||online-umwandeln.de/analytics.js
+||online.marketing/a.js
 ||ontraport.com/opt_assets/static/js/logging.js
 ||opendesktop.org/l/fp
 ||ophan.theguardian.com^
@@ -21726,6 +21739,7 @@ omni.soundestlink.com$image
 ||srv.plesk.com^
 ||ss.esade.edu^
 ||ss.photospecialist.co.uk^
+||sst.brodo.com^
 ||sst.bwt.com^
 ||sst.shopware.com^
 ||st.sawlive.tv^
@@ -24394,6 +24408,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||rba.es/track.action
 ||realtime.bbcl.cl^
 ||rvv.emol.com^
+||salvalaselva.org/plsbl/js
 ||sst.cooperativa.cl^
 ||statsmp2.emol.com^
 ||t-pan.triodos.com^
@@ -24839,6 +24854,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||analytics.lunaweb.cloud^
 ||analytics.m7g.twitch.tv^
 ||analytics.maikel.pro^
+||analytics.maileon.com^
 ||analytics.mailmunch.co^
 ||analytics.matchbin.com^
 ||analytics.metriko.app^
@@ -25203,6 +25219,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||cdn.stamped.io/cdn/images/pixel.png
 ||cdn.statically.io/gh/opcdn/analytics/main/script.js
 ||cdn.super.com/remote-event-registry.json
+||cdn.tds.bid/bid.js
 ||cdn.tolt.io/tolt.js
 ||cdn.transifex.com/live.js
 ||cdn.usefathom.com^
