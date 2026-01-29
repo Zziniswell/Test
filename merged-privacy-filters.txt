@@ -7,7 +7,7 @@
 ! Homepage: https://github.com/Zziniswell/Test/blob/Isolate/merged-privacy-filters.txt
 ! Description: Merged AdGuard Tracking Protection + EasyPrivacy. Optimized by excluding simple first-party/third-party rules.
 ! Expires: 8 hours
-! Version: 26.01.29.2
+! Version: 26.01.29.3
 
 !! Merged rules
 
@@ -9174,6 +9174,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||account.y8.com/api/v*/json/tracking/
 ||avito.st/s/pixel/script.js
 ||avito.st/mstatic/build/legacy/*/fingerprint.*.js
 ||adsimg.vevorstatic.com/upload/vevor/custom/vcr/*/vcr.js
@@ -11245,7 +11246,7 @@ device4game.ru##.tg-first-footer-widget
 ||urldefense.proofpoint.com^*analytics_insight.min.js
 ||uq.force.com/auraAnalytics^
 ||hurriyet.com.tr/banalytics.js
-president.jp##.recommend
+lasisa.net,president.jp##.recommend
 ||zatsubitown.com/mailfriend/kaiseki
 ||doda.jp/DodaCommon/Html/js/RtoasterTrack.js
 ||doda.jp/resources/dcfront/js/usrclkTracking.js
@@ -25027,6 +25028,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||assets.yumpu.com/release/*/tracking.js
 ||assistant.watson.appdomain.cloud/analytics/
 ||asterpix.com/tagcloudview/
+||async-px-eu.dynamicyield.com^
 ||async-px.dynamicyield.com^
 ||at.cbsi.com/lib/api/client-info
 ||at.cbsi.com^*/event?
@@ -26758,6 +26760,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||rumstat.cdnvideo.ru^
 ||run.app/api/pixel-event
 ||run.app/data.log
+||run.app/event-tracking-trigger
 ||run.app/events-receiver/get-web-event
 ||run.app/metrics/
 ||run.app/track.js
@@ -26946,6 +26949,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||stats.esecured.net^
 ||stats.externulls.com^$domain=beeg.com
 ||stats.flixhq.live^
+||stats.fluorescent.co^
 ||stats.fomo.com^
 ||stats.gifs.com^
 ||stats.heyoya.com^
